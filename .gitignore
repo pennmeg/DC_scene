@@ -21,3 +21,11 @@
 /yarn-error.log
 
 .byebug_history
+
+# == ignore secrets and env variables
+config/local_env.yml
+config/secrets.yml
+.env
+
+# == ignore development folder/files
+_DEV

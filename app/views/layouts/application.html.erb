@@ -20,6 +20,8 @@
                 <% if !current_user %>
                     <%= link_to "Sign up", new_user_registration_path %> -- --
                     <%= link_to "Sign in", new_user_session_path %>
+                    <%= link_to 'Photos', photos_path %>
+                    <%= link_to 'Upload Your Photo', new_photo_path %>
                 <% else %>
                     <%= link_to "Profile", user_path(current_user)%> -- --
                     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
@@ -30,6 +32,7 @@
                 <% end %>
             </div>
         </div>
+        <p id="notice"><%= notice %></p>
 
         <!-- == yield == -->
         <div id="yield" class="section" data-state="default">

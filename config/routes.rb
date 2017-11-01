@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :users, :only => [:index, :show, :edit, :update] do
         resources :messages
     end
+    resources :photos
 
     # resources :interests
     # resources :places
