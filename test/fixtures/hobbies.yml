@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  reading: MyString
+  gym: MyString
+  movie: MyString
+  dancing: MyString
+  outside: MyString
+  food: MyString
+  drinks: MyString
+  museums: MyString
+
+two:
+  user: two
+  reading: MyString
+  gym: MyString
+  movie: MyString
+  dancing: MyString
+  outside: MyString
+  food: MyString
+  drinks: MyString
+  museums: MyString

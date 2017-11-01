@@ -1,0 +1,70 @@
+======= setup =======
+rails new DC_scene
+cd DC_scene
+atom .
+======= Gemfile =======
+== added gems
+gem 'pg'
+gem 'devise'
+gem 'geocoder'
+gem 'httparty'
+gem 'paperclip'
+gem 'jquery-rails'
+gem 'bootstrap-sass'
+gem 'pry-rails', group: [:development, :test]
+== dev only
+gem 'rb-readline'
+======= gem install =======
+bundle install
+bundle list
+======= devise =======
+rails generate devise:install
+rails generate devise:views
+== files
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+get "/" => "users#home"
+<p id="notice"><%= notice %></p>
+======= generate user migrations =======
+rails generate model Language language:string
+
+rails generate model Neighborhood name:string lat:decimal lng:decimal
+
+rails generate model Photo title:string content_type:string
+
+rails generate model Message content:text
+
+rails generate model User language:references language:references message:references message:references neighborhood:references photo:references fullname:string username:string password:string age:integer gender:string country:string us_state:string bio:text admin:boolean
+
+rails generate devise User
+
+rails generate model Hobby user:references reading:string gym:string movie:string dancing:string outside:string food:string drinks:string museums:string
+
+== fixes
+NOTE: modify dual user:references for named relationships (sender_id, receiver_id)
+ALTER TABLE messages RENAME sender_id_id TO sender_id
+ALTER TABLE messages RENAME receiver_id_id TO receiver_id
+
+== files
+config.scoped_views = true
+registrations_controller.rb
+config.authentication_keys = [:username]    # near line 38
+config.confirmation_keys = [:username]	    # near line 142
+== scaffold
+rails generate scaffold_controller User
+rails generate scaffold_controller Interest
+
+======= database =======
+database.yml
+rake db:create
+rake db:migrate
+======= home =======
+UsersController
+home.html.erb
+======= jquery =======
+yarn add jquery
+== application.js
+//= require jquery
+//= require rails-ujs
+//= require turbolinks
+//= require bootstrap
+//= require_tree .

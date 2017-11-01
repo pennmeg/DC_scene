@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>||| DC_scene |||</title>
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" %>
+        <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=" + GOOGLE_JS_KEY %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <!-- ======= ======= ======= body ======= ======= ======= -->
+    <body>
+
+        <!-- == header == -->
+        <div id="header" class="section">
+            <h1>DC_scene</h1>
+            <div id="menuBox">
+                <%= link_to "Home", home_path %> -- --
+                <% if !current_user %>
+                    <%= link_to "Sign up", new_user_registration_path %> -- --
+                    <%= link_to "Sign in", new_user_session_path %>
+                <% else %>
+                    <%= link_to "Profile", user_path(current_user)%> -- --
+                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                    <div class="menuLine">
+                        <%= link_to "Find Places", "/search_local_places" %>
+                    </div>
+                    Current User: <%= current_user[:firstname] %>
+                <% end %>
+            </div>
+        </div>
+
+        <!-- == yield == -->
+        <div id="yield" class="section" data-state="default">
+            <%= yield %>
+        </div>
+
+        <!-- == content == -->
+        <div id="content">
+            <%= link_to 'Toggle State', "/link_toggle", remote: true, confirm: "== ToggleState:click ==" %>
+            <div id="targetEl" data-state="prev">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- == footer == -->
+        <div id="footer">
+            <p id="notice"><%= notice %></p>
+        </div>
+
+    </body>
+</html>
