@@ -29,7 +29,12 @@
                     <div class="menuLine">
                         <%= link_to "Find Places", "/search_local_places" %>
                     </div>
-                    Current User: <%= current_user[:firstname] %>
+                    <p> >> Current User: <%= current_user[:fullname] %> </p>
+                    <% if current_user[:admin] %>
+                      <span>ADMIN ONLY FUNCTIONS :: </span>
+                      <%= link_to "Add Neighborhood", new_neighborhood_path %> --
+
+                    <% end %>
                 <% end %>
             </div>
         </div>

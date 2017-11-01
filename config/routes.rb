@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
     resources :photos
     resources :languages
+    resources :neighborhoods
 
     # resources :interests
     # resources :places
