@@ -19,15 +19,20 @@
                 <% if !current_user %>
                     <%= link_to "Sign up", new_user_registration_path %> -- --
                     <%= link_to "Sign in", new_user_session_path %>
-                    <%= link_to 'Photos', photos_path %>
-                    <%= link_to 'Upload Your Photo', new_photo_path %>
                 <% else %>
                     <%= link_to "Profile", user_path(current_user)%> -- --
                     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                    <%= link_to 'Photos', photos_path %>
+                    <%= link_to 'Upload Your Photo', new_photo_path %>
                     <div class="menuLine">
                         <%= link_to "Find Places", "/search_local_places" %>
                     </div>
-                    Current User: <%= current_user[:firstname] %>
+                    <p> >> Current User: <%= current_user[:fullname] %> </p>
+                    <% if current_user[:admin] %>
+                      <span>ADMIN ONLY FUNCTIONS :: </span>
+                      <%= link_to "Add Neighborhood", new_neighborhood_path %> --
+
+                    <% end %>
                 <% end %>
             </div>
         </div>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         resources :messages
     end
     resources :photos
+    resources :neighborhoods
 
     # resources :interests
     # resources :places
