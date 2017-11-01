@@ -19,11 +19,13 @@
                 <% if !current_user %>
                     <%= link_to "Sign up", new_user_registration_path %> -- --
                     <%= link_to "Sign in", new_user_session_path %>
-                <% else %>
-                    <%= link_to "Profile", user_path(current_user)%> -- --
-                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                     <%= link_to 'Photos', photos_path %>
                     <%= link_to 'Upload Your Photo', new_photo_path %>
+
+                <% else %>
+                    <%= link_to 'Languages', new_language_path %>
+                    <%= link_to "Profile", user_path(current_user)%> -- --
+                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                     <div class="menuLine">
                         <%= link_to "Find Places", "/search_local_places" %>
                     </div>
