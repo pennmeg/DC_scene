@@ -1,6 +1,4 @@
 <h1>New Message</h1>
-
-
 <%= form_with(model: @message, url: user_messages_path(current_user[:id]), local: true) do |f| %>
     <% if @message.errors.any? %>
         <div id="error_explanation">
@@ -20,15 +18,18 @@
     <% end %>
 
     <% user_name_ids = [] %>
+    <% user_name_ids << "Select a DsCene Member" %>
     <% @users.each_with_index do |user, index| %>
       <% user_name_ids << [user[:fullname], user[:id]] %>
     <% end %>
-
-    <div class="actions">
-      <%= f.select(:receiver_id, options_for_select(user_name_ids, selected_user)) %>
-      <%= f.hidden_field :user_id, id: "user_id", value:current_user[:id].to_s %>
-      <%= f.text_field :content, id: "content" %>
-      <%= f.submit %>
+    <div class="formBox">
+      <div class="actions">
+        <%= f.label :receiver_id, "Send a Message to:" %> 
+        <%= f.select(:receiver_id, options_for_select(user_name_ids, selected_user)) %>
+        <%= f.hidden_field :user_id, id: "user_id", value:current_user[:id].to_s %> <br>
+        <%= f.text_area :content, id: "content" %> <br>
+        <%= f.submit %>
+      </div>
     </div>
 <% end %>
 
