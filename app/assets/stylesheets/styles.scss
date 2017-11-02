@@ -1,3 +1,6 @@
+body {
+  width: 100%;
+}
 .homeimg {
   height: 600px;
   width: 1450px;
@@ -12,4 +15,18 @@
   border-style: double;
   text-align: center;
   margin-left: 400px;
+}
+.formBox {
+  text-align: center;
+}
+#messageTable {
+  width: 80%;
+}
+.messageWith {
+  width: 80%;
+}
+.messageAction {
+  width: 10%;
+}
+
 }

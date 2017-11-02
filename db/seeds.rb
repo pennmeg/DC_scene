@@ -21,7 +21,6 @@ Language.create([
  { language: "Hindi" },
  { language: "Italian" },
  { language: "Japanese" },
- { language: "Javanese" },
  { language: "Korean" },
  { language: "Portuguese" },
  { language: "Punjabi" },
@@ -31,6 +30,7 @@ Language.create([
  { language: "Turkish" },
  { language: "Vietnames" },
  { language: "Not Listed" },
+ { language: "Not Applicable" }
 ])
  # Neighborhood Seeds
  Neighborhood.create([
