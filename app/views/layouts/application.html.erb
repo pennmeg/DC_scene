@@ -34,9 +34,8 @@
                     <% if current_user[:admin] %>
                         <div class="menuLine">
                             <span>ADMIN ONLY FUNCTIONS :: </span>
-                            <%= link_to "Add Neighborhood", new_neighborhood_path %> -- --
-                            <%= link_to 'All Languages', languages_path %> -- --
-                            <%= link_to 'New Language', new_language_path %>
+                            <%= link_to "All Neighborhoods", neighborhoods_path %> -- --
+                            <%= link_to 'All Languages', languages_path %> 
                         </div>
                     <% end %>
                     <p> >> Current User: <%= current_user[:fullname] %> </p>
@@ -46,12 +45,11 @@
 
         <!-- == yield == -->
         <div id="yield" class="section" data-state="default">
-            <%= yield %>
+          <p id="notice"><%= notice %></p>
+          <%= yield %>
         </div>
-
         <!-- == footer == -->
         <div id="footer">
-            <p id="notice"><%= notice %></p>
         </div>
 
     </body>
