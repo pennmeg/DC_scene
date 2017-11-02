@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %>
+<h1>Your New Message</h1>
+
+<p><%= @message[:content] %></p>
+
+<%= link_to 'Edit', edit_user_message_path(current_user, @message) %> |
+<%= link_to 'Back', user_messages_path %>

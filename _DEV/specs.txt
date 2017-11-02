@@ -44,6 +44,14 @@ NOTE: modify dual user:references for named relationships (sender_id, receiver_i
 ALTER TABLE messages RENAME sender_id_id TO sender_id
 ALTER TABLE messages RENAME receiver_id_id TO receiver_id
 
+rails generate migration AddSenderReceiverToMessage
+class AddSenderReceiverToMessage < ActiveRecord::Migration[5.1]
+    def change
+        add_column :messages, :user_id, :bigint
+        add_column :messages, :receiver_id, :bigint
+    end
+end
+      
 == files
 config.scoped_views = true
 registrations_controller.rb
@@ -68,3 +76,9 @@ yarn add jquery
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+======= table data =======
+INSERT INTO languages (language, created_at, updated_at) VALUES ('English', current_timestamp, current_timestamp);
+INSERT INTO languages (language, created_at, updated_at) VALUES ('Spanish', current_timestamp, current_timestamp);
+INSERT INTO languages (language, created_at, updated_at) VALUES ('French', current_timestamp, current_timestamp);
+
+INSERT INTO messages (content, created_at, updated_at) VALUES ('ihdktdk', current_timestamp, current_timestamp);
