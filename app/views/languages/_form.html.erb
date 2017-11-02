@@ -12,7 +12,8 @@
   <% end %>
 
   <div class="actions">
-    Language: <%= form.text_field :language %>
+    <%= form.label :language, "Language" %>
+    <%= form.text_field :language %>
     <%= form.submit %>
   </div>
 <% end %>

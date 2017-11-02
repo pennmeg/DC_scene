@@ -5,10 +5,14 @@
 <div id="wrapper">
   <% @users.each do |user| %>
     <div class="userInfo">
-        <p>Image</p>
-        <%= link_to user[:fullname], user %>
-        <%= user[:neighborhood] %>
-        <%= user[:hobby] %>
+      <!-- If user has a photo show it
+      else show -->
+        <%= image_tag("Flag_washingtonDC.png", :alt => "Profile Photo") %>
+      <!-- end -->
+      <br>
+      <%= link_to user[:fullname], user %>
+      <%= user[:neighborhood] %>
+      <%= user[:hobby] %>
     </div>
   <% end %>
 </div>
