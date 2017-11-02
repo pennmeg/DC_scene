@@ -1,3 +1,14 @@
+
+<div id="profileinfo">
+  <p>Age:<br>  <%= @user[:age] %><p><br>
+  <p>Gender:<br>  <%= @user[:gender] %><p><br>
+  <p>From:<br>  <%= @user[:country] %><p><br>
+  <p>About Me:<br>  <%= @user[:bio] %><p>
+</div>
+<div class="links">
+  <%= link_to 'Edit', edit_user_path(@user) %>
+  <%= link_to 'Back', users_path %>
+</div>
 <%= link_to 'Back', users_path %>
 <% if @user[:id] == current_user[:id] %>
   <%= link_to 'Edit', edit_user_path(@user) %>

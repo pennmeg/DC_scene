@@ -5,8 +5,16 @@ body {
   height: 600px;
   width: 1450px;
 }
+.links {
+  text-align: center;
+}
 #footer {
   height: 100px;
+}
+#profileinfo {
+  border-style: double;
+  text-align: center;
+  margin-left: 400px;
 }
 .formBox {
   text-align: center;
@@ -20,6 +28,5 @@ body {
 .messageAction {
   width: 10%;
 }
-tr {
-  
+
 }
