@@ -2,31 +2,46 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
   <% selected_primary_lang = nil %>
   <% secondary_lang_id = nil %>
-
   <div class="field">
-    <%= f.label :fullname %><br />
+    <%= f.label :fullname %> <br>
     <%= f.text_field :fullname, autofocus: true %>
   </div>
-
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :username %> <br>
+    <%= f.text_field :username, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :email %> <br>
     <%= f.email_field :email, autofocus: true %>
   </div>
-
   <div class="field">
-    <%= f.label :age %><br />
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br>
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %> <br>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label :age %> <br>
     <%= f.number_field :age %>
   </div>
-
   <div class="field">
-    <%= f.label :gender %><br />
+    <%= f.label :gender %> <br>
     <%= f.select :gender, options_for_select([["Female", "female"], ["Male", "male"],
       ["Agender", "agender"], ["Genderfluid", "genderfluid"], ["Genderqueer", "genderqueer"],
-      ["Transgender", "transgender"], ["Prefer Not to Say", "prefer not to say"]]) %>   </div>
-
+      ["Transgender", "transgender"], ["Prefer Not to Say", "prefer not to say"]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :bio, "About Me" %> <br>
+    <%= f.text_area :bio, autofocus: true %>
+  </div>
+  <p>What language(s) do you speak?</p>
   <!-- ======= select box source arrays ======= -->
   <% if @user[:primary_lang_id] %>
       <% selected_primary_lang = @user[:primary_lang_id] %>
@@ -34,30 +49,27 @@
   <% if @user[:secondary_lang_id] %>
       <% selected_secondary_lang = @user[:secondary_lang_id] %>
   <% end %>
-
   <!-- ======= select box generators ======= -->
   <% language_name_ids = [] %>
   <% @languages.each_with_index do |language, index| %>
       <% language_name_ids << [language[:language], language[:id]] %>
   <% end %>
-
   <div class="field">
-    <%= f.label :primary_lang_id, "Language" %><br />
+    <%= f.label :primary_lang_id, "Language" %> <br>
     <%= f.select(:primary_lang_id, options_for_select(language_name_ids, selected_primary_lang)) %>
   </div>
-
   <div class="field">
-    <%= f.label :secondary_lang_id, "Additional Language" %><br />
+    <%= f.label :secondary_lang_id, "Additional Language (optional)" %> <br>
     <%= f.select(:secondary_lang_id, options_for_select(language_name_ids, selected_secondary_lang)) %>
   </div>
-
+  <!-- continue with form fields -->
+  <p>Where are you from?</p>
   <div class="field">
-    <%= f.label :country %><br />
+    <%= f.label :country %> <br>
     <%= f.text_field :country, autofocus: true %>
   </div>
-
   <div class="field">
-    <%= f.label :us_state, "US State" %><br />
+    <%= f.label :us_state, "US State" %> <br>
     <%= f.select :us_state, options_for_select([["Not Applicable", "Not Applicable"], ["AL", "AL"], ["AK", "AK"], ["AZ", "AZ"], ["AR", "AR"], ["CA", "CA"], ["CO", "CO"],
       ["CT", "CT"], ["DC", "DC"], ["DE", "DE"], ["FL", "FL"], ["GA", "GA"], ["HI", "HI"], ["ID", "ID"], ["IL", "IL"],
       ["IN", "IN"], ["IA", "IA"], ["KS", "KS"], ["KY", "KY"], ["LA", "LA"], ["ME", "ME"],
@@ -68,25 +80,11 @@
       ["VA", "VA"], ["WA", "WA"], ["WV", "WV"], ["WI", "WI"], ["WY", "WY"], ["American Samoa", "America Samoa"], ["Guam", "Guam"],
       ["Northern Mariana Islands", "Northern Mariana Islands"], ["Puerto Rico", "Puerto Rico"], ["Virgin Islands", "Virgin Islands"]]) %> <br><br>
   </div>
-
-  <div class="field">
-    <%= f.label :bio, "About Yourself" %><br />
-    <%= f.text_area :bio, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
+  <p>What DC neighborhood did you move to?</p>
+  <em>Don't see it listed? Email us at dcscene@email.com</em> <br>
+  <%= f.collection_select :neighborhood_id, Neighborhood.order(:name), :id, :name %> <br>
+  <%= f.hidden_field :admin, value: false %>
+  <br> 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
