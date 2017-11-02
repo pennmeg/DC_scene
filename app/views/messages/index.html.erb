@@ -2,6 +2,20 @@
 
 <h1>Messages</h1>
 
+<!-- ======= select box source arrays ======= -->
+<% user_name_ids = [] %>
+<% @users.each_with_index do |user, index| %>
+    <% user_name_ids << [user[:fullname], user[:id]] %>
+<% end %>
+
+<%= form_with(model: @message, url: "/filter_messages", method: "get", local: true) do |f| %>
+    <div class="actions">
+        <%= f.select(:receiver_id, options_for_select(user_name_ids)) %>
+        <%= f.hidden_field :user_id, id: "user_id", value:current_user[:id].to_s %>
+        <%= f.submit "filter" %>
+    </div>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -9,17 +23,20 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @messages.each do |message| %>
-      <tr>
-        <td><%= link_to 'Show', message %></td>
-        <td><%= link_to 'Edit', edit_message_path(message) %></td>
-        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <tbody>
+        <% @messages.each do |message| %>
+            <% receiver = User.find(message[:receiver_id]) %>
+            <% receiver_id = receiver[:id] %>
+            <% receiver_name = receiver[:fullname] %>
+            <tr>
+                <td><%= receiver_id.to_s %> <%= link_to receiver_name, user_message_path(current_user, message) %></td>
+                <td><%= link_to 'Edit', edit_user_message_path(current_user, message) %></td>
+                <td><%= link_to 'Destroy', user_message_path(current_user, message), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        <% end %>
+    </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Message', new_message_path %>
+<%= link_to 'New Message', new_user_message_path(current_user[:id]) %>

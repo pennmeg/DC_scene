@@ -27,7 +27,9 @@
                     <%= link_to "Profile", user_path(current_user)%> -- --
                     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                     <div class="menuLine">
-                        <%= link_to "Find Places", "/search_local_places" %>
+                        <%= link_to "Find Places", "/search_local_places" %> -- --
+                        <%= link_to "Send Message", new_user_message_path(current_user) %> -- --
+                        <%= link_to "My Messages", "/my_messages/" + current_user[:id].to_s %>
                     </div>
                     <% if current_user[:admin] %>
                         <div class="menuLine">
