@@ -41,12 +41,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :primary_lang_id %><br />
+    <%= f.label :primary_lang_id, "Language" %><br />
     <%= f.select(:primary_lang_id, options_for_select(language_name_ids, selected_primary_lang)) %>
   </div>
 
   <div class="field">
-    <%= f.label :secondary_lang_id %><br />
+    <%= f.label :secondary_lang_id, "Additional Language" %><br />
     <%= f.select(:secondary_lang_id, options_for_select(language_name_ids, selected_secondary_lang)) %>
   </div>
 
@@ -56,12 +56,19 @@
   </div>
 
   <div class="field">
-    <%= f.label :us_state %><br />
-    <%= f.text_field :us_state, autofocus: true %>
+    <%= f.label :us_state, "US State" %><br />
+    <%= f.select :us_state, options_for_select([["Not Applicable", "Not Applicable"], ["AL", "AL"], ["AK", "AK"], ["AZ", "AZ"], ["AR", "AR"], ["CA", "CA"], ["CO", "CO"],
+      ["CT", "CT"], ["DC", "DC"], ["DE", "DE"], ["FL", "FL"], ["GA", "GA"], ["HI", "HI"], ["ID", "ID"], ["IL", "IL"],
+      ["IN", "IN"], ["IA", "IA"], ["KS", "KS"], ["KY", "KY"], ["LA", "LA"], ["ME", "ME"],
+      ["MD", "MD"], ["MA", "MA"], ["MI", "MI"], ["MN", "MN"], ["MS", "MS"], ["MO", "MO"],
+      ["MT", "MT"], ["NE", "NE"], ["NV", "NV"], ["NH", "NH"], ["NJ", "NJ"], ["NM", "NM"],
+      ["NY", "NY"], ["NC", "NC"], ["ND", "ND"], ["OH", "OH"], ["OK", "OK"], ["OR", "OR"],
+      ["PA", "PA"], ["RI", "RI"], ["SC", "SC"], ["SD", "SD"], ["TN", "TN"], ["TX", "TX"], ["UT", "UT"], ["VT", "VT"],
+      ["VA", "VA"], ["WA", "WA"], ["WV", "WV"], ["WI", "WI"], ["WY", "WY"]]) %> <br><br>
   </div>
 
   <div class="field">
-    <%= f.label :bio %><br />
+    <%= f.label :bio, "About Yourself" %><br />
     <%= f.text_field :bio, autofocus: true %>
   </div>
 
@@ -84,14 +91,3 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
-
-# fullname
-# username
-# password
-# email
-# age
-# gender
-# country
-# us_state
-# bio
-# admin
