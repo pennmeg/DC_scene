@@ -7,11 +7,6 @@ class NeighborhoodsController < ApplicationController
     @neighborhoods = Neighborhood.all
   end
 
-  # GET /neighborhoods/1
-  # GET /neighborhoods/1.json
-  def show
-  end
-
   # GET /neighborhoods/new
   def new
     @neighborhood = Neighborhood.new
@@ -28,11 +23,9 @@ class NeighborhoodsController < ApplicationController
 
     respond_to do |format|
       if @neighborhood.save
-        format.html { redirect_to @neighborhood, notice: 'Neighborhood was successfully created.' }
-        format.json { render :show, status: :created, location: @neighborhood }
+        format.html { redirect_to neighborhoods_path, notice: 'Neighborhood was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @neighborhood.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +35,9 @@ class NeighborhoodsController < ApplicationController
   def update
     respond_to do |format|
       if @neighborhood.update(neighborhood_params)
-        format.html { redirect_to @neighborhood, notice: 'Neighborhood was successfully updated.' }
-        format.json { render :show, status: :ok, location: @neighborhood }
+        format.html { redirect_to neighborhoods_path, notice: 'Neighborhood was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @neighborhood.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,6 +60,6 @@ class NeighborhoodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def neighborhood_params
-      params.fetch(:neighborhood, {})
+      params.require(:neighborhood).permit(:name, :lat, :lng)
     end
 end

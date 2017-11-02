@@ -1,3 +1,5 @@
 class Neighborhood < ApplicationRecord
-    belongs_to :user
+    validates :name, uniqueness: true
+    validates :lat, presence: true
+    validates :lng, presence: true
 end
