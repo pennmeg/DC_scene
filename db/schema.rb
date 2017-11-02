@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171102110509) do
+ActiveRecord::Schema.define(version: 20171102144733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,13 +45,11 @@ ActiveRecord::Schema.define(version: 20171102110509) do
   end
 
   create_table "neighborhoods", force: :cascade do |t|
-    t.bigint "user_id"
     t.string "name"
     t.decimal "lat"
     t.decimal "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_neighborhoods_on_user_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -93,7 +91,9 @@ ActiveRecord::Schema.define(version: 20171102110509) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.bigint "neighborhood_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["neighborhood_id"], name: "index_users_on_neighborhood_id"
     t.index ["primary_lang_id"], name: "index_users_on_primary_lang_id"
     t.index ["receiver_id"], name: "index_users_on_receiver_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -102,6 +102,6 @@ ActiveRecord::Schema.define(version: 20171102110509) do
   end
 
   add_foreign_key "hobbies", "users"
-  add_foreign_key "neighborhoods", "users"
   add_foreign_key "photos", "users"
+  add_foreign_key "users", "neighborhoods"
 end
