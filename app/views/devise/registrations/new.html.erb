@@ -18,13 +18,14 @@
 
   <div class="field">
     <%= f.label :age %><br />
-    <%= f.text_field :age, autofocus: true %>
+    <%= form.number_field :age %>
   </div>
 
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.text_field :gender, autofocus: true %>
-  </div>
+    <%= form.select :gender, options_for_select([["Female", "female"], ["Male", "male"],
+      ["Agender", "agender"], ["Genderfluid", "genderfluid"], ["Genderqueer", "genderqueer"],
+      ["Transgender", "transgender"], ["Prefer Not to Say", "prefer not to say"]]) %>   </div>
 
   <!-- ======= select box source arrays ======= -->
   <% if @user[:primary_lang_id] %>
@@ -62,7 +63,7 @@
 
   <div class="field">
     <%= f.label :bio %><br />
-    <%= f.text_field :bio, autofocus: true %>
+    <%= form.text_area :bio %>
   </div>
 
   <div class="field">
