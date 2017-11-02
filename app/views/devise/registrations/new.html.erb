@@ -6,6 +6,26 @@
   <% selected_primary_lang = nil %>
   <% secondary_lang_id = nil %>
 
+  <div class="field">
+    <%= f.label :fullname %><br />
+    <%= f.text_field :fullname, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_field :age, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender, autofocus: true %>
+  </div>
+
   <!-- ======= select box source arrays ======= -->
   <% if @user[:primary_lang_id] %>
       <% selected_primary_lang = @user[:primary_lang_id] %>
@@ -31,13 +51,18 @@
   </div>
 
   <div class="field">
-    <%= f.label :fullname %><br />
-    <%= f.text_field :fullname, autofocus: true %>
+    <%= f.label :country %><br />
+    <%= f.text_field :country, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :us_state %><br />
+    <%= f.text_field :us_state, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_field :bio, autofocus: true %>
   </div>
 
   <div class="field">
@@ -51,31 +76,6 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.text_field :age, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :country %><br />
-    <%= f.text_field :country, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :us_state %><br />
-    <%= f.text_field :us_state, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_field :bio, autofocus: true %>
   </div>
 
   <div class="actions">

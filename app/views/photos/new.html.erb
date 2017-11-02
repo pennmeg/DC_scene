@@ -1,16 +1,27 @@
+<h2>Add a New Photo</h2>
 <%= form_with(model: @photo, url: photos_path, local: true) do |f| %>
   <%= render 'shared/errors', object: @photo %>
   <div class="form-group">
-    <%= f.label :content_type %>
-    <%= f.text_field :content_type, class: 'form-control' %>
+    <%= radio_button_tag(:content_type, "image/jpeg") %>
+    <%= label_tag("image/jpeg") %>
+    <%= radio_button_tag(:content_type, "image/gif") %>
+    <%= label_tag("image/gif") %>
+    <%= radio_button_tag(:content_type, "image/png") %>
+    <%= label_tag("image/png") %>
   </div>
+  <br>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
   <div class="form-group">
+    <%= f.hidden_field :caption, value: nil, class: 'form-control'%>
+  </div>
+  <br>
+  <div class="form-group">
     <%= f.label :image %>
     <%= f.file_field :image, class: 'form-control'%>
   </div>
+  <br>
   <%= f.submit 'Upload', class: 'btn btn-primary' %>
 <% end %>

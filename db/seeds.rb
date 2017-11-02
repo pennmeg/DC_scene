@@ -15,8 +15,24 @@ User.create([
 ])
 
 Language.create([
+ { language: "Amharic" },
+ { language: "Arabic" },
+ { language: "Bengali" },
+ { language: "Dutch" },
  { language: "English" },
  { language: "French" },
+ { language: "German" },
+ { language: "Hindi" },
+ { language: "Italian" },
+ { language: "Japanese" },
+ { language: "Javanese" },
+ { language: "Korean" },
+ { language: "Portuguese" },
+ { language: "Punjabi" },
+ { language: "Russian" },
  { language: "Spanish" },
- { language: "Amharic" },
+ { language: "Swahili" },
+ { language: "Turkish" },
+ { language: "Vietnames" },
+ { language: "Not Listed" },
 ])
