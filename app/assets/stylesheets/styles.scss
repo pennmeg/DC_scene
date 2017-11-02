@@ -19,7 +19,11 @@ body {
 }
 .messageAction {
   width: 10%;
+  text-align: center;
+}
+th {
+  visibility: hidden;
 }
 tr {
-  
+ background-color: #eee;
 }
