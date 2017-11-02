@@ -1,7 +1,39 @@
-<h2>Sign up</h2>
+``<h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+
+  <% selected_primary_lang = nil %>
+  <% secondary_lang_id = nil %>
+
+  <!-- ======= select box source arrays ======= -->
+  <% if @user[:primary_lang_id] %>
+      <% selected_primary_lang = @user[:primary_lang_id] %>
+  <% end %>
+  <% if @user[:secondary_lang_id] %>
+      <% selected_secondary_lang = @user[:secondary_lang_id] %>
+  <% end %>
+
+  <!-- ======= select box generators ======= -->
+  <% language_name_ids = [] %>
+  <% @languages.each_with_index do |language, index| %>
+      <% language_name_ids << [language[:language], language[:id]] %>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :primary_lang_id %><br />
+    <%= f.select(:primary_lang_id, options_for_select(language_name_ids, selected_primary_lang)) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :secondary_lang_id %><br />
+    <%= f.select(:secondary_lang_id, options_for_select(language_name_ids, selected_secondary_lang)) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fullname %><br />
+    <%= f.text_field :fullname, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -21,9 +53,45 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_field :age, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :us_state %><br />
+    <%= f.text_field :us_state, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_field :bio, autofocus: true %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+# fullname
+# username
+# password
+# email
+# age
+# gender
+# country
+# us_state
+# bio
+# admin

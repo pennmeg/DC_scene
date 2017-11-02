@@ -1,8 +1,8 @@
-<%= form_with(model: message, local: true) do |form| %>
+
+<%= form_with(model: message, local: true) do |f| %>
   <% if message.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
-
       <ul>
       <% message.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,7 +11,21 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <!-- ======= select box source arrays ======= -->
+    <% selected_user = nil %>
+    <% if message[:user_id] %>
+        <% selected_user = @message[:user_id] %>
+    <% end %>
+
+    <% user_name_ids = [] %>
+    <% @users.each_with_index do |user, index| %>
+        <% user_name_ids << [user[:fullname], user[:id]] %>
+    <% end %>
+
+    <div class="actions">
+        <%= f.select(:receiver_id, options_for_select(user_name_ids, selected_user)) %>
+        <%= f.hidden_field :user_id, id: "user_id", value:current_user[:id].to_s %>
+        <%= f.text_field :content, id: "content" %>
+        <%= f.submit %>
+    </div>
 <% end %>

@@ -19,38 +19,34 @@
                 <% if !current_user %>
                     <%= link_to "Sign up", new_user_registration_path %> -- --
                     <%= link_to "Sign in", new_user_session_path %>
-                    <%= link_to 'Photos', photos_path %>
-                    <%= link_to 'Upload Your Photo', new_photo_path %>
 
                 <% else %>
-                    <%= link_to 'Languages', new_language_path %>
+                    <%= link_to 'All Users', users_path %> -- --
+                    <%= link_to 'Photos', photos_path %> -- --
+                    <%= link_to 'New Photo', new_photo_path %> -- --
                     <%= link_to "Profile", user_path(current_user)%> -- --
                     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                     <div class="menuLine">
-                        <%= link_to "Find Places", "/search_local_places" %>
+                        <%= link_to "Find Places", "/search_local_places" %> -- --
+                        <%= link_to "Send Message", new_user_message_path(current_user) %> -- --
+                        <%= link_to "My Messages", "/my_messages/" + current_user[:id].to_s %>
                     </div>
-                    <p> >> Current User: <%= current_user[:fullname] %> </p>
                     <% if current_user[:admin] %>
-                      <span>ADMIN ONLY FUNCTIONS :: </span>
-                      <%= link_to "Add Neighborhood", new_neighborhood_path %> --
-
+                        <div class="menuLine">
+                            <span>ADMIN ONLY FUNCTIONS :: </span>
+                            <%= link_to "Add Neighborhood", new_neighborhood_path %> -- --
+                            <%= link_to 'All Languages', languages_path %> -- --
+                            <%= link_to 'New Language', new_language_path %>
+                        </div>
                     <% end %>
+                    <p> >> Current User: <%= current_user[:fullname] %> </p>
                 <% end %>
             </div>
         </div>
-        <p id="notice"><%= notice %></p>
 
         <!-- == yield == -->
         <div id="yield" class="section" data-state="default">
             <%= yield %>
-        </div>
-
-        <!-- == content == -->
-        <div id="content">
-            <%= link_to 'Toggle State', "/link_toggle", remote: true, confirm: "== ToggleState:click ==" %>
-            <div id="targetEl" data-state="prev">
-                <p></p>
-            </div>
         </div>
 
         <!-- == footer == -->
