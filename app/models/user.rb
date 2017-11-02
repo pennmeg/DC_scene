@@ -8,5 +8,5 @@ class User < ApplicationRecord
 
     has_many :messages
     has_one :neighborhood
-    has_one :photo
+    has_many :photos
 end
