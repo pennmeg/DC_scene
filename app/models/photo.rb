@@ -3,5 +3,5 @@ class Photo < ApplicationRecord
 		    (attachment.instance.title == 'Special' ? "100x100#" : "64x64#") } }
     validates_attachment :image, content_type: {content_type:
       ["image/jpeg", "image/gif", "image/png"]}
-    belongs_to :user
+    has_one :user
 end
