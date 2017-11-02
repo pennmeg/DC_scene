@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-  
+
   def home
   end
   # GET /users/1
