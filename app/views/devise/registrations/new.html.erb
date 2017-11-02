@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= f.label :age %><br />
-    <%= form.number_field :age %>
+    <%= f.number_field :age %>
   </div>
 
   <div class="field">
     <%= f.label :gender %><br />
-    <%= form.select :gender, options_for_select([["Female", "female"], ["Male", "male"],
+    <%= f.select :gender, options_for_select([["Female", "female"], ["Male", "male"],
       ["Agender", "agender"], ["Genderfluid", "genderfluid"], ["Genderqueer", "genderqueer"],
       ["Transgender", "transgender"], ["Prefer Not to Say", "prefer not to say"]]) %>   </div>
 
@@ -63,7 +63,7 @@
 
   <div class="field">
     <%= f.label :bio %><br />
-    <%= form.text_area :bio %>
+    <%= f.text_area :bio %>
   </div>
 
   <div class="field">
@@ -85,14 +85,3 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
-
-# fullname
-# username
-# password
-# email
-# age
-# gender
-# country
-# us_state
-# bio
-# admin
