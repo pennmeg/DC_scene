@@ -33,9 +33,20 @@ body {
   text-align: center;
 }
 .homeButtons {
+  box-sizing: border-box;
+  width: 120px;
+  margin: 8px auto;
+  padding: 5px;
+  transition: background-color .18s ease-in-out;
   background-color: yellow;
-  padding: 3px;
-  margin: 5px;
+  border: 4px yellow solid;
+}
+.homeButtons a {
+  text-decoration: none;
+  color:black;
+}
+.homeButtons:hover {
+  background-color: white;
 }
 .links {
   text-align: center;
@@ -48,9 +59,12 @@ body {
 .section {
   margin: 20px;
 }
-#footer {
+footer {
   height: 100px;
+  text-align: center;
+  font-size: 10px;
 }
+
 
 /* ======= profile ======= */
 #profileInfo {
