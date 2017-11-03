@@ -22,7 +22,7 @@
   <% if @user[:id] == current_user[:id] %>
     <%= link_to 'Add interests', new_hobby_path %> -- --
     <%= link_to 'Add a new Photo', new_photo_path %> -- --
-    <%= link_to 'Edit Profile', edit_user_path(@user) %> -- --
+    <%= link_to 'Edit Profile', edit_user_registration_path(@user) %> -- --
     <%= link_to 'Delete Profile', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% end %>
 </div>
