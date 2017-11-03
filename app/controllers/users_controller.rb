@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+
   end
 
   # POST /users
@@ -75,6 +76,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {})
+      params.require(:user).permit(:primary_lang_id, :secondary_lang_id, :sender_id, :receiver_id,
+        :fullname, :username, :password, :age, :gender, :country, :us_state, :bio, :admin)
     end
 end
