@@ -1,15 +1,35 @@
-
-/* ======= general ======= */
+/* === general === */
 body {
   width: 100%;
 }
 #logo {
+  margin-left: 250px;
   font-size: 70px;
   font-family: 'Abril Fatface', cursive;
-  margin-left: 250px;
 }
+/* === home page and nav === */
 #nav {
   margin-left: -10px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #111; /* Change the link color to #111 (black) on hover */
 }
 #slideshow {
   margin: 50px auto;
@@ -20,17 +40,21 @@ body {
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 #slideshow > div {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
 }
 #homeMenu, #homeSlideshow {
   width: 50%;
 }
 #homeMenu {
   text-align: center;
+}
+.homeButtons a {
+  text-decoration: none;
+  color:black;
 }
 .homeButtons {
   box-sizing: border-box;
@@ -41,32 +65,22 @@ body {
   background-color: yellow;
   border: 4px yellow solid;
 }
-.homeButtons a {
-  text-decoration: none;
-  color:black;
-}
 .homeButtons:hover {
   background-color: white;
+}
+.section {
+  margin: 20px;
 }
 .links {
   text-align: center;
 }
+/* === flexbox wrapper === */
 .wrapper {
   display: flex;
   align-items: center;
   align-content: space-around;
 }
-.section {
-  margin: 20px;
-}
-footer {
-  height: 100px;
-  text-align: center;
-  font-size: 10px;
-}
-
-
-/* ======= profile ======= */
+/* === profile display === */
 #profileInfo {
   border-style: double;
   text-align: center;
@@ -84,19 +98,18 @@ footer {
   height: auto;
   margin: 0 auto;
 }
+/* === forms === */
 .formBox {
   text-align: center;
 }
-
-/* ======= tables ======= */
+/* === tables === */
 th {
   visibility: hidden;
 }
 tr {
- background-color: #eee;
+  background-color: #eee;
 }
-
-/* ======= messages ======= */
+/* === messages === */
 #messageTable {
   width: 80%;
 }
@@ -111,33 +124,14 @@ tr {
   width: 50%;
   text-align: left;
 }
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-li a:hover {
-    background-color: #111; /* Change the link color to #111 (black) on hover */
-}
-#hobbyform {
-  text-align: center
-}
 #newMessages {
   width: 50%;
   text-align: right;
   margin-right: 50px;
+}
+/* === footer === */
+footer {
+  height: 100px;
+  text-align: center;
+  font-size: 10px;
 }
