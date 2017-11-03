@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>||| D_sCene |||</title>
+        <title> D_sCene </title>
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" %>
@@ -11,7 +11,7 @@
     <!-- ======= ======= ======= body ======= ======= ======= -->
     <body>
       <header>
-        <div id="logo">DsCcene</div>
+        <div id="logo">DsCene</div>
         <div id="nav">
           <ul>
             <% if current_user %>
@@ -24,7 +24,7 @@
                   <li><%= link_to "My Messages", "/my_messages/" + current_user[:id].to_s %></li>
                   <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
               </div>
-              <% if current_user[:admin] %>
+              <% if current_user[:admin] == true %>
                   <div class="menuLine">
                       <span>ADMIN ONLY FUNCTIONS :: </span>
                       <li><%= link_to "All Neighborhoods", neighborhoods_path %></li>
