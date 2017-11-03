@@ -1,5 +1,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  
+  # ======= google maps =======
+  GOOGLE_PLACES_KEY             = Rails.application.secrets.GOOGLE_PLACES_KEY
+  GOOGLE_MAPS_KEY               = Rails.application.secrets.GOOGLE_MAPS_KEY
+  GOOGLE_JS_KEY                 = Rails.application.secrets.GOOGLE_JS_KEY
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development

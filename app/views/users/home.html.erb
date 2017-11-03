@@ -1,7 +1,8 @@
 <% if !current_user %>
   <%= render :partial => "/users/homePage" %>
 <% else %>
-<% end %>
+  <div id="userHome">
+  </div>
 <h1> Places we Recommend </h1>
 <div id="breweries">
 <h3> Breweries </h3>
@@ -43,3 +44,4 @@
   <%= link_to 'National Museum of Natural History', 'http://naturalhistory.si.edu/' %><br>
   <%= link_to 'Vietnam Veterans Memorial', 'https://www.nps.gov/vive/index.htm' %><br>
 </div>
+<% end %>

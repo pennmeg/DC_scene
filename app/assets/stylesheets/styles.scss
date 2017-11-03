@@ -1,16 +1,43 @@
-
-/* ======= general ======= */
+/* === general === */
 body {
   width: 100%;
 }
 #logo {
+  margin-left: 250px;
   font-size: 70px;
   font-family: 'Abril Fatface', cursive;
-  margin-left: 250px;
 }
+.section {
+  margin: 20px;
+}
+/* === nav === */
 #nav {
   margin-left: -10px;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #111; /* Change the link color to #111 (black) on hover */
+}
+.links {
+  text-align: center;
+}
+/* === home page === */
 #slideshow {
   margin: 50px auto;
   position: relative;
@@ -20,11 +47,11 @@ body {
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 #slideshow > div {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
 }
 #homeMenu, #homeSlideshow {
   width: 50%;
@@ -32,27 +59,36 @@ body {
 #homeMenu {
   text-align: center;
 }
+.homeButtons a {
+  text-decoration: none;
+  color:black;
+}
 .homeButtons {
+  box-sizing: border-box;
+  width: 120px;
+  margin: 8px auto;
+  padding: 5px;
+  transition: background-color .18s ease-in-out;
   background-color: yellow;
-  padding: 3px;
-  margin: 5px;
+  border: 4px yellow solid;
 }
-.links {
-  text-align: center;
+.homeButtons:hover {
+  background-color: white;
 }
+#userHome {
+  background-image: url("UnionRoof.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100px;
+  margin-left: -15px;
+}
+/* === flexbox wrapper === */
 .wrapper {
   display: flex;
   align-items: center;
   align-content: space-around;
 }
-.section {
-  margin: 20px;
-}
-#footer {
-  height: 100px;
-}
-
-/* ======= profile ======= */
+/* === profile display === */
 #profileInfo {
   border-style: double;
   text-align: center;
@@ -70,19 +106,18 @@ body {
   height: auto;
   margin: 0 auto;
 }
+/* === forms === */
 .formBox {
   text-align: center;
 }
-
-/* ======= tables ======= */
+/* === tables === */
 th {
   visibility: hidden;
 }
 tr {
- background-color: #eee;
+  background-color: #eee;
 }
-
-/* ======= messages ======= */
+/* === messages === */
 #messageTable {
   width: 80%;
 }
@@ -97,31 +132,6 @@ tr {
   width: 50%;
   text-align: left;
 }
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-li a:hover {
-    background-color: #111; /* Change the link color to #111 (black) on hover */
-}
-#hobbyform {
-  text-align: center
-}
 #newMessages {
   width: 50%;
   text-align: right;
@@ -131,4 +141,26 @@ li a:hover {
   width: 100px;
   float: left;
   margin-left: 50px;
+/* ==========  map style ========== */
+#map {
+  width: 400px;
+  height: 370px;
+  border: solid 1px purple;
+}
+#get-places-data {
+  width: 100px;
+  height: 20px;
+  padding: 5px;
+  font-size: 0.8em;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ccc;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 0 #777;
+}
+/* === footer === */
+footer {
+  height: 100px;
+  text-align: center;
+  font-size: 10px;
 }
