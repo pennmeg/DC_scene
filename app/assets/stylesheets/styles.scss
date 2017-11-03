@@ -137,6 +137,10 @@ tr {
   text-align: right;
   margin-right: 50px;
 }
+#breweries, #restaurants, #cafes, #places {
+  width: 100px;
+  float: left;
+  margin-left: 50px;
 /* ==========  map style ========== */
 #map {
   width: 400px;
