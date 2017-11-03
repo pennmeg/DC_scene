@@ -169,13 +169,15 @@ tr {
   text-align: center;
 }
 #filterMessages {
+  background-color: #6590BA;
   width: 50%;
-  text-align: left;
+  text-align: center;
 }
 #newMessages {
   width: 50%;
-  text-align: right;
+  text-align: center;
   margin-right: 50px;
+  background-color: #D9DADD;
 }
 #breweries, #restaurants, #cafes, #places {
   width: 100px;
@@ -183,6 +185,20 @@ tr {
   margin-left: 50px;
 }
 /* ==========  map style ========== */
+#messageTable {
+  background-color: #AEA599;
+  width: 80%;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+#profileLinks {
+  display: block;
+  width: 85%;
+  height: auto;
+  margin: 0 auto;
+}
 #map {
   width: 400px;
   height: 370px;
