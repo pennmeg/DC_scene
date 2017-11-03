@@ -27,7 +27,7 @@ class HobbiesController < ApplicationController
 
     respond_to do |format|
       if @hobby.save
-        format.html { redirect_to @user, notice: 'Hobby was successfully created.' }
+        format.html { redirect_to user_path(current_user[:id]), notice: 'Hobby was successfully created.' }
       else
         format.html { render :new }
       end
@@ -39,7 +39,7 @@ class HobbiesController < ApplicationController
   def update
     respond_to do |format|
       if @hobby.update(hobby_params)
-        format.html { redirect_to @hobby, notice: 'Hobby was successfully updated.' }
+        format.html { redirect_to user_path(current_user[:id]), notice: 'Hobby was successfully updated.' }
         format.json { render :show, status: :ok, location: @hobby }
       else
         format.html { render :edit }
