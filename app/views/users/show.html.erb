@@ -11,14 +11,14 @@
   <div id="profileInfo">
     <h3><%= @user[:fullname] %></h3>
     <% if @user[:country] %>
-      <p>From <%= @user[:country] %><p>
+      <h4>From</h4><p> <%= @user[:country] %><p>
     <% end %>
     <% if @user[:us_state] != "Not Applicable" %>
       <p>From <%= @user[:us_state] %><p>
     <% end %>
     <% primaryLang = Language.find(@user[:primary_lang_id]) %>
     <% secondLang = Language.find(@user[:secondary_lang_id]) %>
-    <p>Speaks <%= primaryLang[:language] %>
+    <h4>Speaks</h4><p> <%= primaryLang[:language] %>
     <% if secondLang[:language] != "Not Applicable" %>
       &amp; <%= secondLang[:language] %><p>
     <% end %>
