@@ -69,6 +69,6 @@ class HobbiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hobby_params
-      params.fetch(:hobby, {})
+      params.require(:hobby).permit(:user_id, :reading, :gym, :movie, :dancing, :outside, :food, :drinks, :museums)
     end
 end

@@ -3,5 +3,7 @@
 
 <p><%= @message[:content] %></p>
 
-<%= link_to 'Edit', edit_user_message_path(current_user, @message) %> |
-<%= link_to 'Back', user_messages_path %>
+<div class="links">
+  <%= link_to 'Edit', edit_user_message_path(current_user, @message) %> |
+  <%= link_to 'Back', user_messages_path %>
+</div>
