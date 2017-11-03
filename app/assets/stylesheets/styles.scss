@@ -53,10 +53,13 @@ body {
 }
 
 /* ======= profile ======= */
-#profileinfo {
+#profileInfo {
   border-style: double;
   text-align: center;
   width: 50%;
+}
+.underPhoto {
+  text-align: center;
 }
 #profilePhoto {
   width: 50%;

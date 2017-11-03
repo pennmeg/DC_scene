@@ -5,15 +5,29 @@
     <% else %>
       <%= image_tag("dcflag_heart.png", :alt => "Profile Photo", class: 'defaultPhoto') %>
     <% end %>
+    <p class="underPhoto"><%= @user[:age] %> yrs | <%= @user[:gender] %></p>
+    <p class="underPhoto">Joined DsCene: <%= @user[:created_at] %></p>
   </div>
-  <div id="profileinfo">
-    <p>Age:<br>  <%= @user[:age] %><p><br>
-    <p>Gender:<br>  <%= @user[:gender] %><p><br>
-    <p>From:<br>  <%= @user[:country] %><p><br>
-    <p>About Me:<br>  <%= @user[:bio] %><p>
-      <h3>See my interests:</h3><br>
-      <p><%= link_to 'Show', hobby_path(:id) %></p>
-
+  <div id="profileInfo">
+    <h3><%= @user[:fullname] %></h3>
+    <% if @user[:country] %>
+      <p>From <%= @user[:country] %><p>
+    <% end %>
+    <% if @user[:us_state] != "Not Applicable" %>
+      <p>From <%= @user[:us_state] %><p>
+    <% end %>
+    <h4>About Me</h4>
+    <p><%= @user[:bio] %></p>
+      <% if @hobby %>
+        <p>Favorite Book:    <%= @hobby[:reading] %></p>
+        <p>Favorite sport:   <%= @hobby[:gym] %></p>
+        <p>Favorite movie:   <%= @hobby[:movie] %></p>
+        <p>Favorite music genre:   <%= @hobby[:dancing] %></p>
+        <p>Favorite outdoor activity:    <%= @hobby[:outside] %></p>
+        <p>Favorite food:    <%= @hobby[:food] %></p>
+        <p>Favorite drink:   <%= @hobby[:drinks] %></p>
+        <p>Favorite museum in DC:    <%= @hobby[:museums] %></p>
+      <% end %>
   </div>
 </div>
 <div class="links">

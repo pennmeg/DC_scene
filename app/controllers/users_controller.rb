@@ -10,15 +10,12 @@ class UsersController < ApplicationController
   def home
   end
   # GET /users/1
-  # GET /users/1.json
   def show
     puts "@user: #{@user.inspect}"
-    # @user = User.find(params[:id])
-    # @photos = Photo.all
     @photo = @user.photo
     puts "@photo: #{@photo.inspect}"
-    # @photos = Photo.all
-    # @hobby = @user.hobby
+    @hobby = @user.hobby
+    puts "@hobby: #{@hobby.inspect}"
   end
 
   # GET /users/new
