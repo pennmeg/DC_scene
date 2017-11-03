@@ -1,8 +1,14 @@
-<p>my hobbies:<br>  <%= @hobby[:hobby] %><p>
+<h3>my hobbies:</h3><br>
+<p>Favorite Book:    <%= @hobby[:reading] %></p>
+<p>Favorite sport:   <%= @hobby[:gym] %></p>
+<p>Favorite movie:   <%= @hobby[:movie] %></p>
+<p>Favorite music genre:   <%= @hobby[:dancing] %></p>
+<p>Favorite outdoor activity:    <%= @hobby[:outside] %></p>
+<p>Favorite food:    <%= @hobby[:food] %></p>
+<p>Favorite drink:   <%= @hobby[:drinks] %></p>
+<p>Favorite museum in DC:    <%= @hobby[:museums] %></p>
+
 <div class="links">
   <%= link_to 'Edit', edit_hobby_path(@hobby) %> |
   <%= link_to 'Back', hobbies_path %>
 </div>
-
-
-<td><%= link_to @hobby[:hobby], hobby_path(current_user, @hobby) %><td> <%= @hobby[:hobby] %> </td></td>

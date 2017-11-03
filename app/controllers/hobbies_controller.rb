@@ -65,6 +65,8 @@ class HobbiesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_hobby
       @hobby = Hobby.find(params[:id])
+      puts "@hobby: #{@hobby.inspect}"
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

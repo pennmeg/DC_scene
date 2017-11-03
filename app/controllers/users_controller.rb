@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @photo = @user.photo
     puts "@photo: #{@photo.inspect}"
     # @photos = Photo.all
+    # @hobby = @user.hobby
   end
 
   # GET /users/new
