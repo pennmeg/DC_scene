@@ -24,15 +24,16 @@
                   <li><%= link_to "My Messages", "/my_messages/" + current_user[:id].to_s %></li>
                   <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
               </div>
-              <% if current_user[:admin] == true %>
-                  <div class="menuLine">
-                      <span>ADMIN ONLY FUNCTIONS :: </span>
-                      <li><%= link_to "All Neighborhoods", neighborhoods_path %></li>
-                      <li><%= link_to 'All Languages', languages_path %></li>
-                  </div>
-              <% end %>
             </ul>
-            <p> >> Current User: <%= current_user[:fullname] %> </p>
+          <% end %>
+        </div>
+        <div id="adminOnly">
+          <% if current_user %>
+            <% if current_user[:admin] == true %>
+              <span>Admin Functions: </span>
+              <%= link_to "View/Edit Neighborhoods", neighborhoods_path %> |
+              <%= link_to 'View/Edit Languages', languages_path %>
+            <% end %>
           <% end %>
         </div>
       </header>
