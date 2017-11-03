@@ -8,7 +8,6 @@ class HobbiesController < ApplicationController
   end
 
   # GET /hobbies/1
-  # GET /hobbies/1.json
   def show
   end
 
@@ -68,7 +67,6 @@ class HobbiesController < ApplicationController
       puts "@hobby: #{@hobby.inspect}"
 
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def hobby_params
       params.require(:hobby).permit(:user_id, :reading, :gym, :movie, :dancing, :outside, :food, :drinks, :museums)
