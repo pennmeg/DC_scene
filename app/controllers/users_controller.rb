@@ -12,9 +12,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
-    @photos = Photo.all
-    puts "@photos: #{@photos.inspect}"
+    puts "@user: #{@user.inspect}"
+    # @user = User.find(params[:id])
+    # @photos = Photo.all
+    @photo = @user.photo
+    puts "@photo: #{@photo.inspect}"
     # @photos = Photo.all
   end
 
