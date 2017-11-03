@@ -1,0 +1,32 @@
+<!-- ======= search_local_places ======= -->
+
+<h1>Find Local Places</h1>
+
+<%= form_tag("/show_local_places", method: "get") do %>
+
+    <% neighborhoods = ["U St", "Bloomingdale", "Columbia Heights", "Petworth", "Downtown", "H St", "11th St", "Shaw"] %>
+    <% types = ["food", "bar", "libray", "gym", "movie_theater", "night_club", "park", "museum"] %>
+
+    <div id="search-data">
+        <div class="data">
+            <div class="data-label"><%= label_tag(:placename, "Barname:") %></div>
+            <div class="data-value"><%= text_field_tag(:placename, "Looking Glass", id:"placename") %></div>
+        </div>
+        <div class="data">
+            <div class="data-label"><%= label_tag(:neighborhood, "Neighborhood:") %></div>
+            <div class="data-value">
+                <%= select_tag :neighborhood, options_for_select(neighborhoods, "neighborhood"), id:"neighborhood" %>
+            </div>
+            <div class="data-value">
+              <%= select_tag :type, options_for_select(types, "type"), id:"type" %>
+            </div>
+
+        </div>
+    </div>
+        <div class="data">
+            <div class="data-label">&nbsp;</div>
+            <!-- <%= link_to "Get Places", "#", id:"get-places-link", remote:true %> -->
+            <%= link_to "Get Places", "#", id:"get-places-data" %>
+        </div>
+    </div>
+<% end %>
