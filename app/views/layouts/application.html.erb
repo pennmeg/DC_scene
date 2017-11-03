@@ -13,28 +13,31 @@
 
         <!-- == header == -->
         <div id="header" class="section">
-            <h1>DC_scene</h1>
+            <h1>DC Scene</h1>
             <div id="menuBox">
-                <%= link_to "Home", home_path %> -- --
+              <ul>
+                <li><%= link_to "Home", home_path %></li>
                 <% if !current_user %>
-                    <%= link_to "Sign up", new_user_registration_path %> -- --
-                    <%= link_to "Sign in", new_user_session_path %>
+                    <li><%= link_to "Sign up", new_user_registration_path %></li>
+                    <li><%= link_to "Sign in", new_user_session_path %></li>
                 <% else %>
-                    <%= link_to 'All Users', users_path %> -- --
-                    <%= link_to "Profile", user_path(current_user)%> -- --
-                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                    <li><%= link_to 'All Users', users_path %></li>
+                    <li><%= link_to "Profile", user_path(current_user)%></li>
+                    <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                     <div class="menuLine">
-                        <%= link_to "Find Places", "/search_local_places" %> -- --
-                        <%= link_to "Send Message", new_user_message_path(current_user) %> -- --
-                        <%= link_to "My Messages", "/my_messages/" + current_user[:id].to_s %>
+                        <li><%= link_to "Find Places", "/search_local_places" %></li>
+                        <li><%= link_to "Send Message", new_user_message_path(current_user) %></li>
+                        <li><%= link_to "My Messages", "/my_messages/" + current_user[:id].to_s %></li>
+                        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
                     </div>
                     <% if current_user[:admin] %>
                         <div class="menuLine">
                             <span>ADMIN ONLY FUNCTIONS :: </span>
-                            <%= link_to "All Neighborhoods", neighborhoods_path %> -- --
-                            <%= link_to 'All Languages', languages_path %>
+                            <li><%= link_to "All Neighborhoods", neighborhoods_path %></li>
+                            <li><%= link_to 'All Languages', languages_path %></li>
                         </div>
                     <% end %>
+                  </ul>
                     <p> >> Current User: <%= current_user[:fullname] %> </p>
                 <% end %>
             </div>

@@ -1,4 +1,8 @@
+<p>my hobbies:<br>  <%= @hobby[:hobby] %><p>
+<div class="links">
+  <%= link_to 'Edit', edit_hobby_path(@hobby) %> |
+  <%= link_to 'Back', hobbies_path %>
+</div>
 
 
-<%= link_to 'Edit', edit_hobby_path(@hobby) %> |
-<%= link_to 'Back', hobbies_path %>
+<td><%= link_to @hobby[:hobby], hobby_path(current_user[:id], @hobby) %><td> <%= @hobby[:hobby] %> </td></td>
