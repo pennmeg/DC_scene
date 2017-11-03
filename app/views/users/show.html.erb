@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div id="profilePhoto">
-      <%= link_to image_tag(@photo.image.url, class: 'media-object'), @photo.image.url, class: 'profile-photo', target: '_blank' %>
+    <%= link_to image_tag(@photo.image.url, class: 'media-object'), @photo.image.url, class: 'profile-photo', target: '_blank' %>
   </div>
   <div id="profileinfo">
     <p>Age:<br>  <%= @user[:age] %><p><br>
