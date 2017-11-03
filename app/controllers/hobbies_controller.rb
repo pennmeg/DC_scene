@@ -27,11 +27,9 @@ class HobbiesController < ApplicationController
 
     respond_to do |format|
       if @hobby.save
-        format.html { redirect_to @hobby, notice: 'Hobby was successfully created.' }
-        format.json { render :show, status: :created, location: @hobby }
+        format.html { redirect_to @user, notice: 'Hobby was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @hobby.errors, status: :unprocessable_entity }
       end
     end
   end
