@@ -135,6 +135,23 @@ tr {
   text-align: right;
   margin-right: 50px;
 }
+/* ==========  map style ========== */
+#map {
+    width: 400px;
+    height: 370px;
+    border: solid 1px purple;
+}
+#get-places-data {
+    width: 100px;
+    height: 20px;
+    padding: 5px;
+    font-size: 0.8em;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ccc;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 0 #777;
+}
 /* === footer === */
 footer {
   height: 100px;
