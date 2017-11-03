@@ -1,6 +1,7 @@
 /* === general === */
 body {
   width: 100%;
+  background-color: #eee;
 }
 #logo {
   margin-left: 250px;
@@ -45,6 +46,7 @@ li a:hover {
   height: 500px;
   padding: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  background-color: white;
 }
 #slideshow > div {
   position: absolute;
@@ -57,11 +59,12 @@ li a:hover {
   width: 50%;
 }
 #homeMenu {
+  padding-left: 5px;
   text-align: center;
 }
 .homeButtons a {
   text-decoration: none;
-  color:black;
+  color: black;
 }
 .homeButtons {
   box-sizing: border-box;
@@ -69,11 +72,11 @@ li a:hover {
   margin: 8px auto;
   padding: 5px;
   transition: background-color .18s ease-in-out;
-  background-color: yellow;
-  border: 4px yellow solid;
+  background-color: #6590BA;
+  border: 4px #6590BA solid;
 }
 .homeButtons:hover {
-  background-color: white;
+  background-color: #eee;
 }
 #userHome {
   background-image: url("UnionRoof.jpg");
@@ -161,7 +164,13 @@ tr {
 }
 /* === footer === */
 footer {
-  height: 100px;
+  width: 100%;
+  margin-left: -10px;
+  padding: 5px;
+  height: 60px;
   text-align: center;
   font-size: 10px;
+  background-color: #d9dadd;
+  position: absolute;
+  bottom: 0;
 }
