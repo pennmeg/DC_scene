@@ -1,16 +1,59 @@
-
-/* ======= general ======= */
+/* === general === */
 body {
   width: 100%;
+  background-color: #eee;
 }
 #logo {
+  margin-left: 250px;
   font-size: 70px;
   font-family: 'Abril Fatface', cursive;
-  margin-left: 250px;
 }
+.section {
+  margin: 20px;
+}
+/* === nav === */
 #nav {
   margin-left: -10px;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #111; /* Change the link color to #111 (black) on hover */
+}
+.links {
+  text-align: center;
+}
+#adminOnly {
+  margin-left: -10px;
+  padding: 2px;
+  text-align: right;
+  background-color: #333;
+  color: white;
+  font-size: 12px;
+}
+#adminOnly a {
+  color: white;
+  text-decoration: none;
+}
+#adminOnly a:hover {
+  text-decoration: underline;
+}
+/* === home page === */
 #slideshow {
   margin: 50px auto;
   position: relative;
@@ -18,41 +61,60 @@ body {
   height: 500px;
   padding: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  background-color: white;
 }
 #slideshow > div {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
 }
 #homeMenu, #homeSlideshow {
   width: 50%;
 }
 #homeMenu {
+  padding-left: 5px;
   text-align: center;
+}
+#passwordReset, .homeButtons, .homeButtons a {
+  text-decoration: none;
+  color: black;
+  font-family: Georgia;
+}
+.homeButtons, .homeButtons a {
+  font-size: 16px;
+  text-transform: uppercase;
 }
 .homeButtons {
-  background-color: yellow;
-  padding: 3px;
-  margin: 5px;
+  box-sizing: border-box;
+  width: 120px;
+  margin: 8px auto;
+  padding: 5px;
+  transition: background-color .18s ease-in-out;
+  background-color: #6590BA;
+  border: 4px #6590BA solid;
 }
-.links {
-  text-align: center;
+#passwordReset:hover {
+  text-decoration: underline;
 }
+.homeButtons:hover {
+  background-color: #eee;
+}
+#userHome {
+  margin-left: -15px;
+  background-image: url("UnionRoof.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100px;
+}
+/* === flexbox wrapper === */
 .wrapper {
   display: flex;
   align-items: center;
   align-content: space-around;
 }
-.section {
-  margin: 20px;
-}
-#footer {
-  height: 100px;
-}
-
-/* ======= profile ======= */
+/* === profile display === */
 #profileInfo {
   border-style: double;
   text-align: center;
@@ -70,19 +132,32 @@ body {
   height: auto;
   margin: 0 auto;
 }
+/* === forms === */
 .formBox {
   text-align: center;
 }
-
-/* ======= tables ======= */
+.field {
+  margin: 4px;
+}
+.typeBox {
+  background-color: white;
+  border: 2px solid #6590BA;
+  border-radius: 5px;
+  width: 200px;
+}
+select {
+  border: 2px solid #6590BA;
+  width: 206px;
+  background-color: white;
+}
+/* === tables === */
 th {
   visibility: hidden;
 }
 tr {
- background-color: #eee;
+  background-color: #eee;
 }
-
-/* ======= messages ======= */
+/* === messages === */
 #messageTable {
   width: 80%;
 }
@@ -94,33 +169,9 @@ tr {
   text-align: center;
 }
 #filterMessages {
+  background-color: #6590BA;
   width: 50%;
-  text-align: left;
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-li a:hover {
-    background-color: #111; /* Change the link color to #111 (black) on hover */
-}
-#hobbyform {
-  text-align: center
+  text-align: center;
 }
 #newMessages {
   width: 50%;
@@ -133,10 +184,7 @@ li a:hover {
   float: left;
   margin-left: 50px;
 }
-#filterMessages {
-  background-color: #6590BA;
-  text-align: center;
-}
+/* ==========  map style ========== */
 #messageTable {
   background-color: #AEA599;
   width: 80%;
@@ -150,5 +198,31 @@ h1 {
   width: 85%;
   height: auto;
   margin: 0 auto;
-
+}
+#map {
+  width: 400px;
+  height: 370px;
+  border: solid 1px purple;
+}
+#get-places-data {
+  width: 100px;
+  height: 20px;
+  padding: 5px;
+  font-size: 0.8em;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ccc;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 0 #777;
+}
+/* === footer === */
+footer {
+  width: 100%;
+  margin-left: -10px;
+  padding: 5px;
+  text-align: center;
+  font-size: 10px;
+  background-color: #d9dadd;
+  clear: both;
+  position: absolute;
 }
