@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :photos
     resources :languages
     resources :neighborhoods
+    resources :hobbies
+
 
     get "/filter_messages" => "messages#filter_messages"
     get "/my_messages/:id" => "messages#my_messages"
