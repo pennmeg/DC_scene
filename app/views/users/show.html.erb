@@ -1,18 +1,21 @@
-<div class="links">
-  <%= link_to 'Back', users_path %>
-  <% if @user[:id] == current_user[:id] %>
-    <%= link_to 'Edit', edit_user_path(@user) %>
-    <%= link_to 'Destroy', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <%= link_to 'Hobby', hobbies_path(@user) %>
-  <% end %>
-  <%= link_to "Send Message", new_user_message_path(current_user) %>
+<div class="wrapper">
+  <div id="profilePhoto">
+    <% @photos.each do |photo| %>
+      <% if @user[:id] == photo[:user_id] %>
+        <%= link_to image_tag(photo.image.url, class: 'media-object'), photo.image.url, target: '_blank' %>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="profileinfo">
+    <p>Age:<br>  <%= @user[:age] %><p><br>
+    <p>Gender:<br>  <%= @user[:gender] %><p><br>
+    <p>From:<br>  <%= @user[:country] %><p><br>
+    <p>About Me:<br>  <%= @user[:bio] %><p>
+  </div>
 </div>
-
-
-
-<div id="profileinfo">
-  <p>Age:<br>  <%= @user[:age] %><p><br>
-  <p>Gender:<br>  <%= @user[:gender] %><p><br>
-  <p>From:<br>  <%= @user[:country] %><p><br>
-  <p>About Me:<br>  <%= @user[:bio] %><p>
-</div>
+<%= link_to 'Back', users_path %> -- --
+<% if @user[:id] == current_user[:id] %>
+  <%= link_to 'New Photo', new_photo_path %> -- --
+  <%= link_to 'Edit', edit_user_path(@user) %> -- --
+  <%= link_to 'Destroy', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>

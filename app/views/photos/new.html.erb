@@ -1,4 +1,5 @@
-<h2>Add a New Photo</h2>
+<h2>Upload a Profile Photo</h2>
+<em>Photos must be 250px X 250px</em>
 <div class="formBox">
   <%= form_with(model: @photo, url: photos_path, local: true) do |f| %>
     <%= render 'shared/errors', object: @photo %>
@@ -12,11 +13,8 @@
     </div>
     <br>
     <div class="form-group">
-      <%= f.label :title %>
-      <%= f.text_field :title, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.hidden_field :caption, value: nil, class: 'form-control'%>
+      <%= f.hidden_field :title, value: "Profile Photo", class: 'form-control' %>
+      <%= f.hidden_field :user_id, value: current_user[:id], class: 'form-control'%>
     </div>
     <br>
     <div class="form-group">
