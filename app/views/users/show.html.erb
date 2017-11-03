@@ -3,7 +3,7 @@
     <% if @photo %>
       <%= link_to image_tag(@photo.image.url, class: 'media-object'), @photo.image.url, class: 'profile-photo', target: '_blank' %>
     <% else %>
-      <%= image_tag("dcflag_heart.png", :alt => "Profile Photo") %>
+      <%= image_tag("dcflag_heart.png", :alt => "Profile Photo", class: 'defaultPhoto') %>
     <% end %>
   </div>
   <div id="profileinfo">
