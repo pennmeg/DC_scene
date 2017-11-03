@@ -3,20 +3,45 @@
     <% if @photo %>
       <%= link_to image_tag(@photo.image.url, class: 'media-object'), @photo.image.url, class: 'profile-photo', target: '_blank' %>
     <% else %>
-      <%= image_tag("dcflag_heart.png", :alt => "Profile Photo") %>
+      <%= image_tag("dcflag_heart.png", :alt => "Profile Photo", class: 'defaultPhoto') %>
     <% end %>
+    <p class="underPhoto"><%= @user[:age] %> yrs | <%= @user[:gender] %></p>
+    <p class="underPhoto">Joined DsCene: <%= @user[:created_at] %></p>
   </div>
-  <div id="profileinfo">
-    <p>Age:<br>  <%= @user[:age] %><p><br>
-    <p>Gender:<br>  <%= @user[:gender] %><p><br>
-    <p>From:<br>  <%= @user[:country] %><p><br>
-    <p>About Me:<br>  <%= @user[:bio] %><p>
+  <div id="profileInfo">
+    <h3><%= @user[:fullname] %></h3>
+    <% if @user[:country] %>
+      <p>From <%= @user[:country] %><p>
+    <% end %>
+    <% if @user[:us_state] != "Not Applicable" %>
+      <p>From <%= @user[:us_state] %><p>
+    <% end %>
+    <% primaryLang = Language.find(@user[:primary_lang_id]) %>
+    <% secondLang = Language.find(@user[:secondary_lang_id]) %>
+    <p>Speaks <%= primaryLang[:language] %>
+    <% if secondLang[:language] != "Not Applicable" %>
+      &amp; <%= secondLang[:language] %><p>
+    <% end %>
+    <h4>About Me</h4>
+    <p><%= @user[:bio] %></p>
+      <% if @hobby %>
+        <p>Likes reading.. <%= @hobby[:reading] %></p>
+        <p>Favorite sport(s): <%= @hobby[:gym] %></p>
+        <p>Watches.. <%= @hobby[:movie] %></p>
+        <p>Listens to.. <%= @hobby[:dancing] %></p>
+        <p>Favorite outdoor activity:<%= @hobby[:outside] %></p>
+        <p>Enjoy eating.. <%= @hobby[:food] %></p>
+        <p>Drink of choice is.. <%= @hobby[:drinks] %></p>
+        <p>So far, my favorite museum in DC is.. <%= @hobby[:museums] %></p>
+      <% end %>
   </div>
 </div>
-<%= link_to 'Back', users_path %> -- --
-<% if @user[:id] == current_user[:id] %>
-  <%= link_to 'Hobbies', new_hobby_path %> -- --
-  <%= link_to 'New Photo', new_photo_path %> -- --
-  <%= link_to 'Edit', edit_user_path(@user) %> -- --
-  <%= link_to 'Destroy', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<% end %>
+<div class="links">
+  <%= link_to 'Back', users_path %> -- --
+  <% if @user[:id] == current_user[:id] %>
+    <%= link_to 'Add Interests', new_hobby_path %> -- --
+    <%= link_to 'Update Profile Photo', new_photo_path %> -- --
+    <%= link_to 'Edit Profile', edit_user_registration_path %> -- --
+    <%= link_to 'Delete Profile', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+</div>

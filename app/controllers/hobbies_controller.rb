@@ -8,7 +8,6 @@ class HobbiesController < ApplicationController
   end
 
   # GET /hobbies/1
-  # GET /hobbies/1.json
   def show
   end
 
@@ -28,11 +27,9 @@ class HobbiesController < ApplicationController
 
     respond_to do |format|
       if @hobby.save
-        format.html { redirect_to @hobby, notice: 'Hobby was successfully created.' }
-        format.json { render :show, status: :created, location: @hobby }
+        format.html { redirect_to user_path(current_user[:id]), notice: 'Hobby was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @hobby.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,7 +39,7 @@ class HobbiesController < ApplicationController
   def update
     respond_to do |format|
       if @hobby.update(hobby_params)
-        format.html { redirect_to @hobby, notice: 'Hobby was successfully updated.' }
+        format.html { redirect_to user_path(current_user[:id]), notice: 'Hobby was successfully updated.' }
         format.json { render :show, status: :ok, location: @hobby }
       else
         format.html { render :edit }
@@ -65,8 +62,9 @@ class HobbiesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_hobby
       @hobby = Hobby.find(params[:id])
-    end
+      puts "@hobby: #{@hobby.inspect}"
 
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def hobby_params
       params.require(:hobby).permit(:user_id, :reading, :gym, :movie, :dancing, :outside, :food, :drinks, :museums)

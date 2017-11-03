@@ -13,15 +13,25 @@
 
 <div class="actions">
   <div id="hobbyform">
-  <%= form_for @hobby do |f| %>
-    <% @hobby = ['reading', 'gym', 'movie', 'dancing', 'outside', 'food', 'drinks', 'museums'] %>
-    <%= form.hidden_field :user_id, value: current_user[:id].to_s %>
-    <% @hobby.each do |hobby| %>
-    <p> <%= hobby %> </p>
-      <%= form.check_box hobby, { :multiple => true }, hobby, false %>
-    <% end %>
-  <% end %>
-  <%= form.submit %>
-</div>
+    <%= form.label :reading, "Whats your favorite book?" %> <br>
+    <%= form.text_field :reading, autofocus: true %><br>
+    <%= form.label :gym, "Whats your favorite sport?" %> <br>
+    <%= form.text_field :gym, autofocus: true %><br>
+    <%= form.label :movie, "What kind of movies do you like?" %> <br>
+    <%= form.text_field :movie, autofocus: true %><br>
+    <%= form.label :dancing, "What kind of music do you like?" %> <br>
+    <%= form.text_field :dancing, autofocus: true %><br>
+    <%= form.label :outside, "What type of outdoor activities do you enjoy?" %> <br>
+    <%= form.text_field :outside, autofocus: true %><br>
+    <%= form.label :food, "What's your favorite food?" %> <br>
+    <%= form.text_field :food, autofocus: true %><br>
+    <%= form.label :drinks, "What's your prefered drink?" %> <br>
+    <%= form.text_field :drinks, autofocus: true %><br>
+    <%= form.label :museums, "Whats your favorite museum in DC?" %> <br>
+    <%= form.text_field :museums, autofocus: true %><br>
+    <%= form.hidden_field :user_id, value: current_user[:id] %>
+    <%= form.submit %>
+
+  </div>
 </div>
   <% end %>

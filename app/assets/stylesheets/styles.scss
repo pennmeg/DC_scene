@@ -3,9 +3,50 @@
 body {
   width: 100%;
 }
-.homeimg {
-  height: 600px;
-  width: 1450px;
+#logo {
+  font-size: 70px;
+  font-family: 'Abril Fatface', cursive;
+  margin-left: 250px;
+}
+#nav {
+  margin-left: -10px;
+}
+#slideshow {
+  margin: 50px auto;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+#slideshow > div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+#homeMenu, #homeSlideshow {
+  width: 50%;
+}
+#homeMenu {
+  text-align: center;
+}
+.homeButtons {
+  box-sizing: border-box;
+  width: 120px;
+  margin: 8px auto;
+  padding: 5px;
+  transition: background-color .18s ease-in-out;
+  background-color: yellow;
+  border: 4px yellow solid;
+}
+.homeButtons a {
+  text-decoration: none;
+  color:black;
+}
+.homeButtons:hover {
+  background-color: white;
 }
 .links {
   text-align: center;
@@ -15,24 +56,32 @@ body {
   align-items: center;
   align-content: space-around;
 }
-#footer {
+.section {
+  margin: 20px;
+}
+footer {
   height: 100px;
+  text-align: center;
+  font-size: 10px;
 }
 
+
 /* ======= profile ======= */
-#profileinfo {
+#profileInfo {
   border-style: double;
   text-align: center;
-  width: 70%;
+  width: 50%;
 }
-.profile-photo > img {
+.underPhoto {
+  text-align: center;
+}
+#profilePhoto {
+  width: 50%;
+}
+.defaultPhoto, .profile-photo > img {
   display: block;
-  width: 60%;
+  width: 80%;
   height: auto;
-  margin: 0 auto;
-}
-.defaultPhoto {
-  display: block;
   margin: 0 auto;
 }
 .formBox {
@@ -81,10 +130,8 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-
-/* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #111;
+    background-color: #111; /* Change the link color to #111 (black) on hover */
 }
 #hobbyform {
   text-align: center
