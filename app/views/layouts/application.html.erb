@@ -5,6 +5,7 @@
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" %>
+        <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=" + GOOGLE_JS_KEY %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
 
@@ -20,6 +21,7 @@
                 <% if !current_user %>
                     <li><%= link_to "Sign up", new_user_registration_path %></li>
                     <li><%= link_to "Sign in", new_user_session_path %></li>
+                    <li><%= link_to "Find Places", "/search_local_places" %></li>
                 <% else %>
                     <li><%= link_to 'All Users', users_path %></li>
                     <li><%= link_to "Profile", user_path(current_user)%></li>
@@ -45,6 +47,7 @@
         <!-- == yield == -->
         <div id="yield" class="section" data-state="default">
           <p id="notice"><%= notice %></p>
+          <div id="map"></div>
           <%= yield %>
         </div>
         <!-- == footer == -->
