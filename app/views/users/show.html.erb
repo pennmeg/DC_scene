@@ -11,6 +11,7 @@
 </div>
 <%= link_to 'Back', users_path %> -- --
 <% if @user[:id] == current_user[:id] %>
+  <%= link_to 'Hobbies', new_hobby_path %> -- --
   <%= link_to 'New Photo', new_photo_path %> -- --
   <%= link_to 'Edit', edit_user_path(@user) %> -- --
   <%= link_to 'Destroy', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
