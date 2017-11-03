@@ -7,7 +7,10 @@ body {
   font-size: 70px;
   font-family: 'Abril Fatface', cursive;
 }
-/* === home page and nav === */
+.section {
+  margin: 20px;
+}
+/* === nav === */
 #nav {
   margin-left: -10px;
 }
@@ -31,6 +34,10 @@ li a {
 li a:hover {
   background-color: #111; /* Change the link color to #111 (black) on hover */
 }
+.links {
+  text-align: center;
+}
+/* === home page === */
 #slideshow {
   margin: 50px auto;
   position: relative;
@@ -68,11 +75,10 @@ li a:hover {
 .homeButtons:hover {
   background-color: white;
 }
-.section {
-  margin: 20px;
-}
-.links {
-  text-align: center;
+#userHome {
+  background-image: url("images/UnionRoof.jpg");
+  background-position: center;
+  background-size: cover;
 }
 /* === flexbox wrapper === */
 .wrapper {
