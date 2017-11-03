@@ -9,3 +9,5 @@ class CreatePhotos < ActiveRecord::Migration[5.1]
     end
   end
 end
+
+# t.belongs_to :user, index: { unique: true }, foreign_key: true

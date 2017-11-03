@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>||| DC_scene |||</title>
+        <title>||| D_sCene |||</title>
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" %>
@@ -23,7 +23,6 @@
                 <% else %>
                     <li><%= link_to 'All Users', users_path %></li>
                     <li><%= link_to "Profile", user_path(current_user)%></li>
-                    <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                     <div class="menuLine">
                         <li><%= link_to "Find Places", "/search_local_places" %></li>
                         <li><%= link_to "Send Message", new_user_message_path(current_user) %></li>
