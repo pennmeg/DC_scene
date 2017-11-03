@@ -36,12 +36,13 @@
       <% end %>
   </div>
 </div>
-<div class="links">
-  <%= link_to 'Back', users_path %> -- --
-  <% if @user[:id] == current_user[:id] %>
-    <%= link_to 'Add Interests', new_hobby_path %> -- --
-    <%= link_to 'Update Profile Photo', new_photo_path %> -- --
-    <%= link_to 'Edit Profile', edit_user_registration_path %> -- --
+<div id="profileLinks">
+  <%= link_to 'Back', users_path %> ||
+  <% if @user[:id] == current_user[:id] %> ||
+    <%= link_to 'Add Interests', new_hobby_path %> ||
+    <%= link_to 'Update Profile Photo', new_photo_path %> ||
+    <%= link_to 'Edit Profile', edit_user_registration_path %> ||
     <%= link_to 'Delete Profile', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% end %>
+</ul>
 </div>
