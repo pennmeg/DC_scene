@@ -1,3 +1,5 @@
-<div id="homeimg">
-  <%= image_tag("dc.jpeg", :alt => "rss feed", class: "homeimg") %>
-</div>
+<% if !current_user %>
+  <%= render :partial => "/users/homePage" %>
+<% else %>
+  <h1>HOME PAGE</h1>
+<% end %>
