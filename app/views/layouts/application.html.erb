@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>||| DC_scene |||</title>
+        <title>||| D_sCene |||</title>
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" %>
@@ -22,6 +22,8 @@
                 <% else %>
                     <%= link_to 'All Users', users_path %> -- --
                     <%= link_to "Profile", user_path(current_user)%> -- --
+                    <%= link_to 'Photos', photos_path %> -- --
+                    <%= link_to 'New Photo', new_photo_path %> -- --
                     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                     <div class="menuLine">
                         <%= link_to "Find Places", "/search_local_places" %> -- --
@@ -31,6 +33,7 @@
                     <% if current_user[:admin] %>
                         <div class="menuLine">
                             <span>ADMIN ONLY FUNCTIONS :: </span>
+                            <%= link_to "Add Neighborhood", new_neighborhood_path %> -- --
                             <%= link_to "All Neighborhoods", neighborhoods_path %> -- --
                             <%= link_to 'All Languages', languages_path %>
                         </div>

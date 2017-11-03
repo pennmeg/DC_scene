@@ -1,3 +1,5 @@
+
+/* ======= general ======= */
 body {
   width: 100%;
 }
@@ -8,17 +10,38 @@ body {
 .links {
   text-align: center;
 }
+.wrapper {
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+}
 #footer {
   height: 100px;
 }
+
+/* ======= profile ======= */
 #profileinfo {
   border-style: double;
   text-align: center;
   width: 60%;
 }
+.profile-photo > img {
+    width: 40%;
+    height: auto;
+}
 .formBox {
   text-align: center;
 }
+
+/* ======= tables ======= */
+th {
+  visibility: hidden;
+}
+tr {
+ background-color: #eee;
+}
+
+/* ======= messages ======= */
 #messageTable {
   width: 80%;
 }
@@ -28,20 +51,6 @@ body {
 .messageAction {
   width: 6%;
   text-align: center;
-}
-th {
-  visibility: hidden;
-}
-tr {
- background-color: #eee;
-}
-.wrapper {
-  display: flex;
-  align-items: center;
-  align-content: space-around;
-}
-#profilePhoto {
-  width: 40%;
 }
 #filterMessages {
   width: 50%;
