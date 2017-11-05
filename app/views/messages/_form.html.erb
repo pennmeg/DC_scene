@@ -25,7 +25,7 @@
     <div class="actions">
         <%= f.select(:receiver_id, options_for_select(user_name_ids, selected_user)) %>
         <%= f.hidden_field :user_id, id: "user_id", value:current_user[:id].to_s %>
-        <%= f.text_field :content, id: "content" %>
+        <%= f.text_area :content, id: "content", id: "messageBox" %>
         <%= f.submit %>
     </div>
 <% end %>
