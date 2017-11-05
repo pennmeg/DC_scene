@@ -185,16 +185,19 @@ tr {
 }
 #breweries, #restaurants, #cafes, #places {
   width: 100px;
-  float: left;
+  // float: left;
   margin-left: 50px;
+  display: inline-block;
+  padding-left: 150px;
 }
+
 /* ==========  map style ========== */
 #messageTable {
   background-color: #AEA599;
   width: 80%;
   text-align: center;
 }
-h1 {
+h1, h2 {
   text-align: center;
 }
 #profileLinks {
@@ -229,4 +232,9 @@ footer {
   background-color: #d9dadd;
   clear: both;
   position: absolute;
+}
+.userInfo {
+  display: inline-block;
+  padding-left: 150px;
+
 }
