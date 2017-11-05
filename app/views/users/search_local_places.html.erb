@@ -2,7 +2,6 @@
 <h1>Find Local Places</h1>
 <div id="map"></div>
 <%= form_tag("/show_local_places", method: "get") do %>
-<<<<<<< HEAD
 
     <% neighborhoods = ["Adams Morgan", "American University Park", "Anacostia", "Benning Heights", "Brentwood", "Brightwood", "Brookland", "Buena Vista", "Capitol Hill", "Capitol View", "Cathedral Heights", "Chevy Chase", "Chinatown", "Cleveland Park", "Columbia Heights", "Downtown", "Dupont Circle", "Fairfax Village", "Foggy Bottom", "Fort Totten", "Friendship Heights", "Georgetown", "Glover Park", "Greenway", "Hillcrest", "Howard U", "Ivy City", "Judiciary Square", "Knox Hill", "Lincoln Heights", "Logan Circle", "Michigan Park", "Mt. Vernon Square", "Navy Yard", "NoMa", "Pleasant Hill", "Shaw", "Takoma", "Tenleytown", "U Street", "Woodley Park", "Woodridge"] %>
     <% types = ["food", "bar", "library", "gym", "movie_theater", "night_club", "park", "museum"] %>
@@ -19,17 +18,6 @@
               <%= select_tag :type, options_for_select(types, "type"), id:"type" %>
             </div>
 
-=======
-  <% neighborhoods = ["U St", "Bloomingdale", "Columbia Heights", "Petworth", "Downtown", "H St", "11th St", "Shaw"] %>
-  <% types = ["food", "bar", "libray", "gym", "movie_theater", "night_club", "park", "museum"] %>
-  <div id="search-data">
-    <div class="data">
-        <div class="data-label">
-          <%= label_tag(:neighborhood, "Neighborhood:") %>
-        </div>
-        <div class="data-value">
-            <%= select_tag :neighborhood, options_for_select(neighborhoods, "neighborhood"), id:"neighborhood" %>
->>>>>>> ed940b7589f36e11e4f0394d02ebb31e82c3abba
         </div>
         <div class="data-value">
           <%= select_tag :type, options_for_select(types, "type"), id:"type" %>
