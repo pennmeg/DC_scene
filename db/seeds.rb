@@ -76,5 +76,5 @@ Language.create([
    { name: "U Street", lat: 38.917000, lng: -77.025328 },
    { name: "Woodley Park", lat: 38.927994, lng: -77.057885 },
    { name: "Woodridge", lat: 38.933334, lng: -76.968627 },
-   { name: "Not Listed", lat: 38.8977 ,lng: 77.0365 }
+   { name: "Not Listed", lat: 38.8977 ,lng: -77.0365 }
 ])
