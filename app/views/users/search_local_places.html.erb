@@ -1,33 +1,30 @@
 <!-- ======= search_local_places ======= -->
-<h1>Find Local Places</h1>
+<div class="surround_bar"></div>
+<h1 class="findPlace">Find Local Places</h1>
 <div id="map"></div>
 <%= form_tag("/show_local_places", method: "get") do %>
 
     <% neighborhoods = ["Adams Morgan", "American University Park", "Anacostia", "Benning Heights", "Brentwood", "Brightwood", "Brookland", "Buena Vista", "Capitol Hill", "Capitol View", "Cathedral Heights", "Chevy Chase", "Chinatown", "Cleveland Park", "Columbia Heights", "Downtown", "Dupont Circle", "Fairfax Village", "Foggy Bottom", "Fort Totten", "Friendship Heights", "Georgetown", "Glover Park", "Greenway", "Hillcrest", "Howard U", "Ivy City", "Judiciary Square", "Knox Hill", "Lincoln Heights", "Logan Circle", "Michigan Park", "Mt. Vernon Square", "Navy Yard", "NoMa", "Pleasant Hill", "Shaw", "Takoma", "Tenleytown", "U Street", "Woodley Park", "Woodridge"] %>
     <% types = ["food", "bar", "library", "gym", "movie_theater", "night_club", "park", "museum"] %>
-
+    <div class="wrapper">
     <div id="search-data">
-      <div id="map"></div>
         <div class="data">
             <div class="data-label"><%= label_tag(:neighborhood, "Neighborhood:") %></div>
             <div class="data-value">
                 <%= select_tag :neighborhood, options_for_select(neighborhoods, "neighborhood"), id:"neighborhood" %>
             </div>
-            <div class="data-label"><%= label_tag(:type, "What are you looking for?:") %></div>
-            <div class="data-value">
-              <%= select_tag :type, options_for_select(types, "type"), id:"type" %>
-            </div>
-
         </div>
+        <div class="data-label"><%= label_tag(:type, "What are you looking for?:") %></div>
         <div class="data-value">
           <%= select_tag :type, options_for_select(types, "type"), id:"type" %>
         </div>
     </div>
     </div>
+    <div class="surround_bar">
       <div class="data">
         <div class="data-label">&nbsp;</div>
           <!-- <%= link_to "Get Places", "#", id:"get-places-link", remote:true %> -->
           <%= link_to "Get Places", "#", id:"get-places-data" %>
-        </div>
+      </div>  
     </div>
 <% end %>
