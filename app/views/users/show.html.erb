@@ -9,20 +9,20 @@
     <p class="underPhoto">Joined DsCene: <%= @user[:created_at] %></p>
   </div>
   <div id="profileInfo">
-    <h3><%= @user[:fullname] %></h3>
+    <h3 class="addColor"><%= @user[:fullname] %></h3>
     <% if @user[:country] %>
-      <h4>From</h4><p> <%= @user[:country] %><p>
+      <h4 class="addColor">From</h4><p> <%= @user[:country] %><p>
     <% end %>
     <% if @user[:us_state] != "Not Applicable" %>
       <p>From <%= @user[:us_state] %><p>
     <% end %>
     <% primaryLang = Language.find(@user[:primary_lang_id]) %>
     <% secondLang = Language.find(@user[:secondary_lang_id]) %>
-    <h4>Speaks</h4><p> <%= primaryLang[:language] %>
+    <h4 class="addColor">Speaks</h4><p> <%= primaryLang[:language] %>
     <% if secondLang[:language] != "Not Applicable" %>
       &amp; <%= secondLang[:language] %><p>
     <% end %>
-    <h4>About Me</h4>
+    <h4 class="addColor">About Me</h4>
     <p><%= @user[:bio] %></p>
       <% if @hobby %>
         <p>Likes reading.. <%= @hobby[:reading] %></p>
