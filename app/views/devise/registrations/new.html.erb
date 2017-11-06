@@ -1,35 +1,35 @@
-<h2>Sign up</h2>
 <div class="formBox">
+  <h2>SIGN UP</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
     <% selected_primary_lang = nil %>
     <% secondary_lang_id = nil %>
     <div class="field">
       <%= f.label :fullname %> <br>
-      <%= f.text_field :fullname, autofocus: true %>
+      <%= f.text_field :fullname, autofocus: true, class: "typeBox" %>
     </div>
     <div class="field">
-      <%= f.label :username %> <br>
-      <%= f.text_field :username, autofocus: true %>
+      <%= f.label :username %><br>
+      <%= f.text_field :username, autofocus: true,  class: "typeBox" %>
     </div>
     <div class="field">
       <%= f.label :email %> <br>
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.email_field :email, autofocus: true,  class: "typeBox" %>
     </div>
     <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br>
-      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.password_field :password, autocomplete: "off", class: "typeBox" %>
     </div>
     <div class="field">
       <%= f.label :password_confirmation %> <br>
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "typeBox" %>
     </div>
     <div class="field">
       <%= f.label :age %> <br>
-      <%= f.number_field :age %>
+      <%= f.number_field :age, class: "typeBox" %>
     </div>
     <div class="field">
       <%= f.label :gender %> <br>
@@ -39,7 +39,7 @@
     </div>
     <div class="field">
       <%= f.label :bio, "About Me" %> <br>
-      <%= f.text_area :bio, autofocus: true %>
+      <%= f.text_area :bio, autofocus: true, class: "typeBox" %>
     </div>
     <p>What language(s) do you speak?</p>
     <!-- ======= select box source arrays ======= -->
@@ -66,7 +66,7 @@
     <p>Where are you from?</p>
     <div class="field">
       <%= f.label :country %> <br>
-      <%= f.text_field :country, autofocus: true %>
+      <%= f.text_field :country, autofocus: true, class: "typeBox" %>
     </div>
     <div class="field">
       <%= f.label :us_state, "US State" %> <br>
@@ -81,13 +81,14 @@
         ["Northern Mariana Islands", "Northern Mariana Islands"], ["Puerto Rico", "Puerto Rico"], ["Virgin Islands", "Virgin Islands"]]) %> <br><br>
     </div>
     <p>What DC neighborhood did you move to?</p>
-    <em>Don't see it listed? Email us at dcscene@email.com</em> <br>
     <%= f.collection_select :neighborhood_id, Neighborhood.order(:name), :id, :name %> <br>
+    <em>Don't see it listed? Email us at dcscene@email.com</em> <br>
     <%= f.hidden_field :admin, value: false %>
     <br>
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "SIGN UP", class: "homeButtons" %>
     </div>
   <% end %>
+  <br>
   <%= render "devise/shared/links" %>
 </div>

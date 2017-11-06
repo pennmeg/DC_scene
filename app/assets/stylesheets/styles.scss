@@ -1,6 +1,7 @@
 /* === general === */
 body {
   width: 100%;
+  background-color: #eee;
 }
 #logo {
   margin-left: 250px;
@@ -39,6 +40,21 @@ li a:hover {
   font-family: 'Abril Fatface', cursive;
   background-color: #D9DADD;
 }
+#adminOnly {
+  margin-left: -10px;
+  padding: 2px;
+  text-align: right;
+  background-color: #333;
+  color: white;
+  font-size: 12px;
+}
+#adminOnly a {
+  color: white;
+  text-decoration: none;
+}
+#adminOnly a:hover {
+  text-decoration: underline;
+}
 /* === home page === */
 #slideshow {
   margin: 50px auto;
@@ -47,6 +63,7 @@ li a:hover {
   height: 500px;
   padding: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  background-color: white;
 }
 #slideshow > div {
   position: absolute;
@@ -59,11 +76,17 @@ li a:hover {
   width: 50%;
 }
 #homeMenu {
+  padding-left: 5px;
   text-align: center;
 }
-.homeButtons a {
+#passwordReset, .backButton, .homeButtons, .homeButtons a {
   text-decoration: none;
-  color:black;
+  color: black;
+  font-family: Georgia;
+}
+.homeButtons, .homeButtons a {
+  font-size: 16px;
+  text-transform: uppercase;
 }
 .homeButtons {
   box-sizing: border-box;
@@ -71,18 +94,21 @@ li a:hover {
   margin: 8px auto;
   padding: 5px;
   transition: background-color .18s ease-in-out;
-  background-color: yellow;
-  border: 4px yellow solid;
+  background-color: #6590BA;
+  border: 3px #6590BA solid;
+}
+#passwordReset:hover, .backButton:hover {
+  text-decoration: underline;
 }
 .homeButtons:hover {
   background-color: white;
 }
 #userHome {
+  margin-left: -15px;
   background-image: url("UnionRoof.jpg");
   background-position: center;
   background-size: cover;
   height: 100px;
-  margin-left: -15px;
 }
 /* === flexbox wrapper === */
 .wrapper {
@@ -122,6 +148,24 @@ li a:hover {
 .formBox {
   text-align: center;
 }
+.field {
+  margin: 4px;
+}
+.typeBox, #messageBox {
+  background-color: white;
+  border: 2px solid #6590BA;
+  border-radius: 5px;
+  width: 200px;
+}
+#messageBox {
+  width: 340px;
+  height: 100px;
+}
+select {
+  border: 2px solid #6590BA;
+  width: 206px;
+  background-color: white;
+}
 /* === tables === */
 th {
   visibility: hidden;
@@ -141,13 +185,15 @@ tr {
   text-align: center;
 }
 #filterMessages {
+  background-color: #6590BA;
   width: 50%;
-  text-align: left;
+  text-align: center;
 }
 #newMessages {
   width: 50%;
-  text-align: right;
+  text-align: center;
   margin-right: 50px;
+  background-color: #D9DADD;
 }
 #breweries, #restaurants, #cafes, #places {
   width: 100px;
@@ -155,6 +201,20 @@ tr {
   margin-left: 50px;
 }
 /* ==========  map style ========== */
+#messageTable {
+  background-color: #AEA599;
+  width: 80%;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+#profileLinks {
+  display: block;
+  width: 85%;
+  height: auto;
+  margin: 0 auto;
+}
 #map {
   width: auto;
   height: 370px;
@@ -214,7 +274,12 @@ tr {
 }
 /* === footer === */
 footer {
-  height: 100px;
+  width: 100%;
+  margin-left: -10px;
+  padding: 5px;
   text-align: center;
   font-size: 10px;
+  background-color: #d9dadd;
+  clear: both;
+  position: absolute;
 }
