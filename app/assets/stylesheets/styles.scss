@@ -37,6 +37,8 @@ li a:hover {
 }
 .links {
   text-align: center;
+  font-family: 'Abril Fatface', cursive;
+  background-color: #D9DADD;
 }
 #adminOnly {
   margin-left: -10px;
@@ -111,17 +113,27 @@ li a:hover {
 /* === flexbox wrapper === */
 .wrapper {
   display: flex;
+  margin-top: 2px;
   align-items: center;
   align-content: space-around;
+  background-color: #D9DADD;
 }
 /* === profile display === */
 #profileInfo {
+  background-color: #AEA599;
   border-style: double;
   text-align: center;
   width: 50%;
+  font-family: 'Abril Fatface', cursive;
 }
-.underPhoto {
+.underPhoto{
   text-align: center;
+  font-family: 'Abril Fatface', cursive;
+  background-color: #AEA599;
+}
+.addColor {
+  text-align: center;
+  background-color: #6590BA;
 }
 #profilePhoto {
   width: 50%;
@@ -207,20 +219,61 @@ h1, h2 {
   margin: 0 auto;
 }
 #map {
-  width: 400px;
+  width: auto;
   height: 370px;
-  border: solid 1px purple;
+  background-color: white;
+  border: solid 14px #AEA599;
+  margin-left: auto;
+  margin-right: auto;
 }
 #get-places-data {
   width: 100px;
   height: 20px;
   padding: 5px;
-  font-size: 0.8em;
+  margin-left: 24%;
+  margin-right: 30%;
+  font-size: 1.2em;
   text-align: center;
   text-decoration: none;
-  background-color: #ccc;
+  background-color: #AEA599;
   box-sizing: border-box;
   box-shadow: 2px 2px 0 #777;
+}
+.surround_bar {
+  height: 55px;
+  width: auto;
+  background-color: #353023;
+}
+.findPlace {
+  text-align: center;
+  font-family: 'Abril Fatface', cursive;
+  background-color: #D9DADD;
+}
+#search-data {
+  height: 100px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.data-label{
+  height: 20px;
+  width: 175px;
+  margin-top: 2px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.data-value{
+  height: 15px;
+  width: 105px;
+  margin-left: 10px;
+  margin-right: auto;
+  margin-bottom: 2px;
+}
+.data {
+  height: 40px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 /* === footer === */
 footer {
