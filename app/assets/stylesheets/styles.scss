@@ -2,17 +2,24 @@
 body {
   width: 100%;
   background-color: #eee;
-}
-#logo {
-  margin-left: 250px;
-  font-size: 70px;
-  font-family: 'Abril Fatface', cursive;
+  font-family: Georgia;
 }
 .section {
   margin: 20px;
 }
+h1 {
+  margin: 0px;
+  margin-left: 150px;
+  font-size: 70px;
+}
+h1, h2, h3, h4, .underPhoto {
+  font-family: 'Abril Fatface', cursive;
+}
+h2, #homeMenu, .linkButton, #profileInfo, .underPhoto, #userName, .messageAction, .formBox, #filterMessages, #newMessages, .otherLinks, footer  {
+  text-align: center;
+}
 /* === nav === */
-#nav {
+#nav, #adminOnly, footer {
   margin-left: -10px;
 }
 ul {
@@ -35,14 +42,9 @@ li a {
 li a:hover {
   background-color: #111; /* Change the link color to #111 (black) on hover */
 }
-.links {
-  text-align: center;
-  font-family: 'Abril Fatface', cursive;
-  background-color: #D9DADD;
-}
 #adminOnly {
-  margin-left: -10px;
   padding: 2px;
+  padding-right: 12px;
   text-align: right;
   background-color: #333;
   color: white;
@@ -72,21 +74,18 @@ li a:hover {
   right: 10px;
   bottom: 10px;
 }
-#homeMenu, #homeSlideshow {
+#homeMenu {
+  margin-left: 15px;
   width: 50%;
 }
-#homeMenu {
-  padding-left: 5px;
-  text-align: center;
-}
-#passwordReset, .backButton, .homeButtons, .homeButtons a {
+#passwordReset, .linkButton, .homeButtons, .homeButtons a {
   text-decoration: none;
   color: black;
-  font-family: Georgia;
 }
 .homeButtons, .homeButtons a {
   font-size: 16px;
   text-transform: uppercase;
+  font-family: Georgia;
 }
 .homeButtons {
   box-sizing: border-box;
@@ -97,7 +96,7 @@ li a:hover {
   background-color: #6590BA;
   border: 3px #6590BA solid;
 }
-#passwordReset:hover, .backButton:hover {
+#passwordReset:hover, .linkButton:hover {
   text-decoration: underline;
 }
 .homeButtons:hover {
@@ -110,29 +109,30 @@ li a:hover {
   background-size: cover;
   height: 100px;
 }
+#wrapperMap {
+  background-color: #D9DADD;
+  border-top: 14px solid #333;
+  border-bottom: 14px solid #333;
+}
 /* === flexbox wrapper === */
 .wrapper {
   display: flex;
-  margin-top: 2px;
   align-items: center;
   align-content: space-around;
-  background-color: #D9DADD;
+}
+.recs {
+  width: 25%;
 }
 /* === profile display === */
 #profileInfo {
   background-color: #AEA599;
   border-style: double;
-  text-align: center;
   width: 50%;
-  font-family: 'Abril Fatface', cursive;
 }
-.underPhoto{
-  text-align: center;
-  font-family: 'Abril Fatface', cursive;
+.underPhoto {
   background-color: #AEA599;
 }
-.addColor {
-  text-align: center;
+#userName {
   background-color: #6590BA;
 }
 #profilePhoto {
@@ -144,16 +144,15 @@ li a:hover {
   height: auto;
   margin: 0 auto;
 }
-/* === forms === */
-.formBox {
-  text-align: center;
+.userInfo {
+  display: inline-block;
+  padding-left: 150px;
 }
+/* === forms === */
 .field {
   margin: 4px;
 }
 .typeBox, #messageBox {
-  background-color: white;
-  border: 2px solid #6590BA;
   border-radius: 5px;
   width: 200px;
 }
@@ -161,99 +160,58 @@ li a:hover {
   width: 340px;
   height: 100px;
 }
-select {
-  border: 2px solid #6590BA;
-  width: 206px;
+.typeBox, #messageBox, select {
   background-color: white;
+  border: 2px solid #6590BA;
 }
-/* === tables === */
-th {
-  visibility: hidden;
+select {
+  width: 206px;
+}
+.adminForms {
+  background-color: #6590BA;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* === table === */
+table {
+  width: 100%;
+}
+th, table {
+  background-color: #AEA599;
 }
 tr {
   background-color: #eee;
 }
-/* === messages === */
-#messageTable {
-  width: 80%;
+td {
+  padding: 3px;
 }
 .messageWith {
   width: 60%;
 }
 .messageAction {
   width: 6%;
-  text-align: center;
 }
-#filterMessages {
+#filterMessages, #newMessages {
+  width: 50%;
   background-color: #6590BA;
-  width: 50%;
-  text-align: center;
+  height: 24px;
+  padding-top: 2px;
 }
-#newMessages {
-  width: 50%;
-  text-align: center;
-  margin-right: 50px;
-  background-color: #D9DADD;
-}
-#breweries, #restaurants, #cafes, #places {
-  width: 100px;
-  // float: left;
-  margin-left: 50px;
-  display: inline-block;
-  padding-left: 150px;
-}
-
 /* ==========  map style ========== */
-#messageTable {
-  background-color: #AEA599;
-  width: 80%;
-  text-align: center;
-}
-h1, h2 {
-  text-align: center;
-}
-#profileLinks {
-  display: block;
-  width: 85%;
-  height: auto;
-  margin: 0 auto;
+.otherLinks {
+  font-size: 14px;
 }
 #map {
   width: auto;
   height: 370px;
   background-color: white;
   border: solid 14px #AEA599;
-  margin-left: auto;
-  margin-right: auto;
-}
-#get-places-data {
-  width: 100px;
-  height: 20px;
-  padding: 5px;
-  margin-left: 24%;
-  margin-right: 30%;
-  font-size: 1.2em;
-  text-align: center;
-  text-decoration: none;
-  background-color: #AEA599;
-  box-sizing: border-box;
-  box-shadow: 2px 2px 0 #777;
-}
-.surround_bar {
-  height: 55px;
-  width: auto;
-  background-color: #353023;
-}
-.findPlace {
-  text-align: center;
-  font-family: 'Abril Fatface', cursive;
-  background-color: #D9DADD;
+  margin: 0px auto;
 }
 #search-data {
   height: 100px;
   width: 200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 .data-label{
   height: 20px;
@@ -272,22 +230,14 @@ h1, h2 {
 .data {
   height: 40px;
   width: 200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 /* === footer === */
 footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  margin-left: -10px;
   padding: 5px;
-  text-align: center;
   font-size: 10px;
   background-color: #d9dadd;
-  clear: both;
-  position: absolute;
-}
-.userInfo {
-  display: inline-block;
-  padding-left: 150px;
-
 }

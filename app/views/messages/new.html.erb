@@ -1,4 +1,4 @@
-<h1>DsCene: New Message</h1>
+<h2>DsCene: Create a New Message</h2>
 <%= form_with(model: @message, url: user_messages_path(current_user[:id]), local: true) do |f| %>
     <% if @message.errors.any? %>
         <div id="error_explanation">
@@ -33,6 +33,6 @@
     </div>
 <% end %>
 <br>
-<div class="links">
-  <%= link_to 'Back', user_messages_path(current_user), class: "backButton" %>
+<div class="otherLinks">
+  <%= link_to 'Back', user_messages_path(current_user), class: "linkButton" %>
 </div>

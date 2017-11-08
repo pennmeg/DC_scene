@@ -207,7 +207,7 @@ class UsersController < ApplicationController
       elsif neighborhood == "NoMa"
           loc = { latitude: 38.900498, longitude: -77.007505}
       elsif neighborhood == "Pleasant Hill"
-          loc = { latitude: 38.863839, longitude: 76.989412}
+          loc = { latitude: 38.863839, longitude: -76.989412}
       elsif neighborhood == "Shaw"
           loc = { latitude: 38.910946, longitude: -77.020462}
       elsif neighborhood == "Takoma"

@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  
+
   # ======= google maps =======
   GOOGLE_PLACES_KEY             = Rails.application.secrets.GOOGLE_PLACES_KEY
   GOOGLE_MAPS_KEY               = Rails.application.secrets.GOOGLE_MAPS_KEY
