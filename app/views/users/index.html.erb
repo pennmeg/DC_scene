@@ -1,7 +1,4 @@
-
-
-<h1>All Users</h1>
-
+<h2>All DsCene Users</h2>
 <div id="wrapper">
   <% @users.each do |user| %>
     <div class="userInfo">
@@ -10,9 +7,11 @@
         <%= image_tag("dcflag_heart.png", :alt => "Profile Photo") %>
       <!-- end -->
       <br>
-      <%= link_to user[:fullname], user %>
-      <%= user[:neighborhood] %>
-      <%= user[:hobby] %>
+      <div class="otherLinks">
+        <%= link_to user[:fullname], user, class: "linkButton" %>
+        <%= user[:neighborhood] %>
+        <%= user[:hobby] %>
+      </div>
     </div>
   <% end %>
 </div>

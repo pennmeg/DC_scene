@@ -12,12 +12,21 @@
   <% end %>
 
   <div class="actions">
-    <%= form.label :name, "Neighborhood Name: " %>
-    <%= form.text_field :name %>
-    <%= form.label :lat, "Latitude: " %>
-    <%= form.number_field :lat, step: :any %>
-    <%= form.label :lng, "Longitude: " %>
-    <%= form.number_field :lng, step: :any %>
-    <%= form.submit %>
+    <div class="adminForms">
+      <div class="field">
+        <%= form.label :name, "Neighborhood Name: " %>
+        <%= form.text_field :name, class: "typeBox" %> <br>
+      </div>
+      <div class="field">
+        <%= form.label :lat, "Latitude: " %>
+        <%= form.number_field :lat, step: :any, class: "typeBox" %> <br>
+      </div>
+      <div class="field">
+        <%= form.label :lng, "Longitude: " %>
+        <%= form.number_field :lng, step: :any, class: "typeBox" %> <br>
+      </div>
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
+<br>

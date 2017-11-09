@@ -1,5 +1,5 @@
-<h1>All Languages</h1>
-<%= link_to 'New Language', new_language_path %>
+<h2>Admin: View All Languages</h2>
+  <%= link_to 'Add a New Language', new_language_path, class: "linkButton" %>
 <br> <br>
 <table>
   <thead>
@@ -11,8 +11,8 @@
     <% @languages.each do |language| %>
       <tr>
         <td><%= language[:language] %></td>
-        <td><%= link_to 'Edit', edit_language_path(language) %></td>
-        <td><%= link_to 'Destroy', language, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_language_path(language), class: "linkButton" %></td>
+        <td><%= link_to 'Delete', language, method: :delete, data: { confirm: 'Are you sure?' }, class: "linkButton" %></td>
       </tr>
     <% end %>
   </tbody>

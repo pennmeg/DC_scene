@@ -10,8 +10,12 @@
     </div>
   <% end %>
   <div class="actions">
-    <%= form.label :language, "Language" %>
-    <%= form.text_field :language %>
-    <%= form.submit %>
+    <div class="adminForms">
+
+      <%= form.label :language, "Language: " %>
+      <%= form.text_field :language, class: "typeBox" %>
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
+<br>
