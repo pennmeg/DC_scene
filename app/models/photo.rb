@@ -12,7 +12,6 @@ class Photo < ApplicationRecord
            access_key_id: AWS_ACCESS_KEY_ID,
            secret_access_key: AWS_SECRET_ACCESS_KEY
        }
-       default_url: "/images/:style/missing_image.jpg"
 
     validates_attachment :image, content_type: {content_type: ["image/jpeg", "image/gif", "image/png"]}
     validates_attachment_size :image, :in => 0.megabytes..1.megabytes
