@@ -1,5 +1,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+
+  GOOGLE_PLACES_KEY      = ENV['GOOGLE_PLACES_KEY']
+  GOOGLE_MAPS_KEY        = ENV['GOOGLE_MAPS_KEY']
+  GOOGLE_JS_KEY          = ENV['GOOGLE_JS_KEY']
 
   # Code is not reloaded between requests.
   config.cache_classes = true
