@@ -11,7 +11,7 @@ class Photo < ApplicationRecord
            bucket: S3_BUCKET,
            access_key_id: AWS_ACCESS_KEY_ID,
            secret_access_key: AWS_SECRET_ACCESS_KEY
-       },
+       }
        default_url: "/images/:style/missing_image.jpg"
 
     validates_attachment :image, content_type: {content_type: ["image/jpeg", "image/gif", "image/png"]}
