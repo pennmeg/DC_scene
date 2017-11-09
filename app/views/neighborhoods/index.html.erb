@@ -1,7 +1,7 @@
 
 
-<h1>All Neighborhoods</h1>
-<%= link_to "Add Neighborhood", new_neighborhood_path %>
+<h2>Admin: All Neighborhoods</h2>
+<%= link_to "Add a New Neighborhood", new_neighborhood_path, class: "linkButton" %>
 <br> <br>
 <table>
   <thead>
@@ -20,8 +20,8 @@
         <td><%= neighborhood[:name] %></td>
         <td><%= neighborhood[:lat] %> &#176;</td>
         <td><%= neighborhood[:lng] %> &#176;</td>
-        <td><%= link_to 'Edit', edit_neighborhood_path(neighborhood) %></td>
-        <td><%= link_to 'Destroy', neighborhood, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_neighborhood_path(neighborhood), class: "linkButton" %></td>
+        <td><%= link_to 'Delete', neighborhood, method: :delete, data: { confirm: 'Are you sure?' }, class: "linkButton" %></td>
       </tr>
     <% end %>
   </tbody>

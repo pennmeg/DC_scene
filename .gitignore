@@ -22,4 +22,4 @@ config/secrets.yml
 .env
 
 # == ignore development folder/files
-_DEV
+_DEV/*

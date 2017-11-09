@@ -9,40 +9,42 @@
     <p class="underPhoto">Joined DsCene: <%= @user[:created_at] %></p>
   </div>
   <div id="profileInfo">
-    <h3 class="addColor"><%= @user[:fullname] %></h3>
+    <div id="userName">
+      <h3><%= @user[:fullname] %></h3>
+    </div>
     <% if @user[:country] %>
-      <h4 class="addColor">From</h4><p> <%= @user[:country] %><p>
+      <h4>From</h4><p> <%= @user[:country] %><p>
     <% end %>
     <% if @user[:us_state] != "Not Applicable" %>
       <p>From <%= @user[:us_state] %><p>
     <% end %>
     <% primaryLang = Language.find(@user[:primary_lang_id]) %>
     <% secondLang = Language.find(@user[:secondary_lang_id]) %>
-    <h4 class="addColor">Speaks</h4><p> <%= primaryLang[:language] %>
+    <h4>Speaks</h4><p> <%= primaryLang[:language] %>
     <% if secondLang[:language] != "Not Applicable" %>
       &amp; <%= secondLang[:language] %><p>
     <% end %>
-    <h4 class="addColor">About Me</h4>
+    <h4>About Me</h4>
     <p><%= @user[:bio] %></p>
       <% if @hobby %>
         <p>Likes reading.. <%= @hobby[:reading] %></p>
         <p>Favorite sport(s): <%= @hobby[:gym] %></p>
         <p>Watches.. <%= @hobby[:movie] %></p>
         <p>Listens to.. <%= @hobby[:dancing] %></p>
-        <p>Favorite outdoor activity:<%= @hobby[:outside] %></p>
+        <p>Favorite outdoor activity: <%= @hobby[:outside] %></p>
         <p>Enjoy eating.. <%= @hobby[:food] %></p>
         <p>Drink of choice is.. <%= @hobby[:drinks] %></p>
         <p>So far, my favorite museum in DC is.. <%= @hobby[:museums] %></p>
       <% end %>
   </div>
 </div>
-<div id="profileLinks">
-  <%= link_to 'Back', users_path %> ||
-  <% if @user[:id] == current_user[:id] %> ||
-    <%= link_to 'Add Interests', new_hobby_path %> ||
-    <%= link_to 'Update Profile Photo', new_photo_path %> ||
-    <%= link_to 'Edit Profile', edit_user_registration_path %> ||
-    <%= link_to 'Delete Profile', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<br>
+<div class="otherLinks">
+  <% if @user[:id] == current_user[:id] %>
+    <%= link_to 'Add Interests', new_hobby_path, class: 'linkButton' %> ||
+    <%= link_to 'Update Profile Photo', new_photo_path, class: 'linkButton' %> ||
+    <%= link_to 'Edit Profile', edit_user_registration_path, class: 'linkButton' %> ||
+    <%= link_to 'Delete Account', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'linkButton' %></td>
   <% end %>
-</ul>
 </div>
+<br>
