@@ -32,4 +32,4 @@ User is required to be created to log in to the website and see functionality
 * Ian Lavoie
 * Cooky Demenke
 * Megan Penn
-* Tom Beach (Thanks teach!)
+* Tom Beach (NYCDA instructor)
