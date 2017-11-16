@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Project Name: DsCene
 
-Things you may want to cover:
+DsCene is designed for individuals who are new to Washington DC to get to know their neighborhood, and their neigbors. This was a group project with students enrolled in NYCDA's Web Development Immersive program (Nov 2017).
 
-* Ruby version
+## Installation
 
-* System dependencies
+Install necessary gems
+```
+bundle install
+```
+Create database housing the languages and neighborhoods files
+```
+rake db:create
+rake db:migrate
+rake db:seed
+```
+User is required to be created to log in to the website and see functionality
 
-* Configuration
+## Built With
+* Ruby on Rails
+* Google Places API
+* PSQL
+* Devise
 
-* Database creation
+## Future Edits
+* Allow users to filter through members to find those who share similar interests, place of origin, etc.
+* Fix footer bug
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Acknoledgements
+* Ian Lavoie
+* Cooky Demenke
+* Megan Penn
+* Tom Beach (NYCDA instructor)
