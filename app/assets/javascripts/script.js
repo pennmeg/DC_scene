@@ -1,6 +1,5 @@
 $(document).on('turbolinks:load', function() {
   console.log("It works on each visit!");
-
   function getJsonData(e) {
     console.log("======= getJsonData =======");
     e.preventDefault()
@@ -9,14 +8,12 @@ $(document).on('turbolinks:load', function() {
     // var latLon = { lat: 38.904706, lng: -77.034715 };
     // console.log("latLon:", latLon);
     var zoom = 15;
-
     var url = "/local_places_json";
     var neighborhood = $("#neighborhood").val();
     console.log("neighborhood:", neighborhood);
     var type = $("#type").val();
     console.log("type:", type);
     var latLon = getLatLon(neighborhood)
-
     map = new google.maps.Map(mapContainer, {
         center: latLon,
         minZoom: 11,

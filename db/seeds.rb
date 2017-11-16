@@ -2,12 +2,8 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 User.create([
-  { fullname:"Coky", username:"cd", password:"cd123", email:"cd@gmail.com",
-  age: 23, gender: "female", country: "ethiopia", primary_lang_id: "English",
-  secondary_lang_id: "Amharic", us_state: nil, bio: nil, admin: true },
-  { fullname:"Megan", username:"mtp", password:"mtp123", email:"megan@email.com",
-   age: 27, gender: "female", country: "canada", primary_lang_id: "English",
-   secondary_lang_id: "French", us_state: nil, bio: nil, admin: true }
+  { primary_lang_id: 1, secondary_lang_id: 2, fullname:"DsCene Admin", username:"dcadmin", password:"dc123456", email:"dscene@email.com",
+  age: 23, gender: "female", country: "USA", us_state: nil, bio: "Admin", admin: true , neighborhood_id: 2},
 ])
 
 Language.create([
