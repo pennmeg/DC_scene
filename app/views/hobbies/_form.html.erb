@@ -12,7 +12,6 @@
   <% end %>
 
 <div class="actions">
-  <div id="hobbyform">
     <%= form.label :reading, "Whats your favorite book?" %> <br>
     <%= form.text_field :reading, autofocus: true,  class: "typeBox" %><br>
     <%= form.label :gym, "Whats your favorite sport?" %> <br>
@@ -31,7 +30,5 @@
     <%= form.text_field :museums, autofocus: true,  class: "typeBox" %><br>
     <%= form.hidden_field :user_id, value: current_user[:id] %>
     <%= form.submit %>
-
-  </div>
 </div>
   <% end %>
