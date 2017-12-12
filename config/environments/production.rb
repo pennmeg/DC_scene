@@ -3,14 +3,14 @@ Rails.application.configure do
   config.secret_key_base = ENV["SECRET_KEY_BASE"]
   config.serve_static_assets = true
   config.paperclip_defaults = {
-    :storage => :s3,
-    s3_region: ENV["S3_REGION"],
-    :s3_credentials => {
-      :bucket => ENV['S3_BUCKET'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    }
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('S3_BUCKET'),
+    access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+    secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+    s3_region: ENV.fetch('S3_REGION'),
   }
+}
 
 
   GOOGLE_PLACES_KEY          = ENV['GOOGLE_PLACES_KEY']
