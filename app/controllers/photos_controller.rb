@@ -12,7 +12,7 @@ class PhotosController < ApplicationController
       @photo = Photo.new(photo_params)
       if @photo.save
         flash[:success] = "The photo was added!"
-        redirect_to user_path(current_user[:id])
+        redirect_to photos_path
       else
         render 'new'
       end
@@ -23,7 +23,7 @@ class PhotosController < ApplicationController
         @photo = Photo.find(params[:id])
         @photo.destroy
         respond_to do |format|
-            format.html { redirect_to user_path(current_user[:id]), notice: 'photo was successfully destroyed.' }
+            format.html { redirect_to photos_path, notice: 'photo was successfully destroyed.' }
         end
     end
     private
