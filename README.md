@@ -16,7 +16,17 @@ rake db:create
 rake db:migrate
 rake db:seed
 ```
-User is required to be created to log in to the website and see functionality
+Guest Account Login:
+username: guestaccount
+email: guest@email.com
+password: guest1234567
+
+## Deployment: Coming soon!
+
+Guest Account Login:
+username: guestaccount
+email: guest@email.com
+password: guest1234567
 
 ## Built With
 * Ruby on Rails
