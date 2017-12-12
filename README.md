@@ -24,7 +24,7 @@ Guest Account Login:
 
 ## Deployment
 
-# Megan: https://lit-everglades-82155.herokuapp.com/
+* Megan: https://lit-everglades-82155.herokuapp.com/
 
 Guest Account Login:
 
