@@ -22,7 +22,9 @@ Guest Account Login:
 * email: guest@email.com
 * password: guest1234
 
-## Deployment: Coming soon!
+## Deployment
+
+# Megan: https://lit-everglades-82155.herokuapp.com/
 
 Guest Account Login:
 
@@ -43,5 +45,5 @@ Guest Account Login:
 ## Acknoledgements
 * Ian Lavoie
 * Cooky Demenke
-* Megan Penn
+* Megan Penn: github.com/pennmeg
 * Tom Beach (NYCDA instructor)
