@@ -1,5 +1,25 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+  config.serve_static_assets = true
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['S3_BUCKET'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
+
+
+  GOOGLE_PLACES_KEY          = ENV['GOOGLE_PLACES_KEY']
+  GOOGLE_MAPS_KEY            = ENV['GOOGLE_MAPS_KEY']
+  GOOGLE_JS_KEY              = ENV['GOOGLE_JS_KEY']
+
+  S3_REGION                  = ENV['S3_REGION']
+  S3_BUCKET                  = ENV['S3_BUCKET']
+  AWS_ACCESS_KEY_ID          = ENV['AWS_ACCESS_KEY_ID']
+  AWS_SECRET_ACCESS_KEY      = ENV['AWS_SECRET_ACCESS_KEY']
 
   # Code is not reloaded between requests.
   config.cache_classes = true

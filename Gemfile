@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 # == added gems
 gem 'pg'
+gem 'aws-sdk'
 gem 'devise'
 gem 'geocoder'
 gem 'httparty'
