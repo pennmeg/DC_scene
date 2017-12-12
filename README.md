@@ -20,7 +20,7 @@ Guest Account Login:
 
 * username: guestaccount
 * email: guest@email.com
-* password: guest1234567
+* password: guest1234
 
 ## Deployment: Coming soon!
 
@@ -28,7 +28,7 @@ Guest Account Login:
 
 * username: guestaccount
 * email: guest@email.com
-* password: guest1234567
+* password: guest1234
 
 ## Built With
 * Ruby on Rails
