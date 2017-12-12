@@ -3,7 +3,9 @@
 #
 User.create([
   { primary_lang_id: 1, secondary_lang_id: 2, fullname:"DsCene Admin", username:"dcadmin", password:"dc123456", email:"dscene@email.com",
-  age: 23, gender: "female", country: "USA", us_state: nil, bio: "Admin", admin: true , neighborhood_id: 2},
+  age: 23, gender: "female", country: "USA", us_state: "DC", bio: "Admin", admin: true , neighborhood_id: 2},
+  { primary_lang_id: 5, secondary_lang_id: 20, fullname:"George Washington", username:"guestaccount", password:"guest1234567", email:"guest@email.com",
+  age: 67, gender: "male", country: "USA", us_state: "VA", bio: "First President of the United States from 1789 - 1797. Married to Martha Washington.", admin: false , neighborhood_id: 43}
 ])
 
 Language.create([
