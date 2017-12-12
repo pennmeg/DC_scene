@@ -41,8 +41,7 @@
 <br>
 <div class="otherLinks">
   <% if @user[:id] == current_user[:id] %>
-    <%= link_to 'Add Interests', new_hobby_path, class: 'linkButton' %> ||
-    <%= link_to 'Update Interests', edit_hobby_path, class: 'linkButton' %> ||
+    <%= link_to 'Add / Update Interests', new_hobby_path, class: 'linkButton' %> ||
     <%= link_to 'Update Profile Photo', new_photo_path, class: 'linkButton' %> ||
     <%= link_to 'Edit Profile', edit_user_registration_path, class: 'linkButton' %> ||
     <%= link_to 'Delete Account', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'linkButton' %></td>
