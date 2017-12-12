@@ -4,6 +4,7 @@ Rails.application.configure do
   config.serve_static_assets = true
   config.paperclip_defaults = {
     :storage => :s3,
+    s3_region: ENV["S3_REGION"],
     :s3_credentials => {
       :bucket => ENV['S3_BUCKET'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
