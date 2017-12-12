@@ -30,7 +30,7 @@
     <%= form.label :museums, "Whats your favorite museum in DC?" %> <br>
     <%= form.text_field :museums, autofocus: true,  class: "typeBox" %><br>
     <%= form.hidden_field :user_id, value: current_user[:id] %>
-    <%= form.submit, class: "homeButtons" %>
+    <%= form.submit %>
 
   </div>
 </div>
