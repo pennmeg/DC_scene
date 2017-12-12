@@ -21,6 +21,6 @@
 <% end %>
 
 <div class="links">
-  <%= link_to 'Show', user_message_path(current_user, @message) %> |
-  <%= link_to 'Back', user_messages_path(current_user) %>
+  <%= link_to 'Show', user_message_path(current_user, @message), class: "linkButton" %> |
+  <%= link_to 'Back', user_messages_path(current_user), class: "linkButton" %>
 </div>
