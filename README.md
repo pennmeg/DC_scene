@@ -17,16 +17,18 @@ rake db:migrate
 rake db:seed
 ```
 Guest Account Login:
-username: guestaccount
-email: guest@email.com
-password: guest1234567
+
+* username: guestaccount
+* email: guest@email.com
+* password: guest1234567
 
 ## Deployment: Coming soon!
 
 Guest Account Login:
-username: guestaccount
-email: guest@email.com
-password: guest1234567
+
+* username: guestaccount
+* email: guest@email.com
+* password: guest1234567
 
 ## Built With
 * Ruby on Rails
